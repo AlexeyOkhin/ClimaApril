@@ -15,6 +15,9 @@
 		0CF4C5FF29F6BC21005B9178 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0CF4C5FE29F6BC21005B9178 /* .gitignore */; };
 		0CF4C60129F6BEA3005B9178 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60029F6BEA3005B9178 /* UIViewController + Extension.swift */; };
 		0CF4C60529F6BEB5005B9178 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60429F6BEB5005B9178 /* UIView + Extension.swift */; };
+		0CF4C60A29F6CA2C005B9178 /* ClimeDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60929F6CA2C005B9178 /* ClimeDayCell.swift */; };
+		0CF4C60C29F6CEAD005B9178 /* ClimeTodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60B29F6CEAD005B9178 /* ClimeTodayCell.swift */; };
+		0CF4C60F29F6D8C2005B9178 /* ClimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60E29F6D8C2005B9178 /* ClimeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		0CF4C5FE29F6BC21005B9178 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0CF4C60029F6BEA3005B9178 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		0CF4C60429F6BEB5005B9178 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		0CF4C60929F6CA2C005B9178 /* ClimeDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeDayCell.swift; sourceTree = "<group>"; };
+		0CF4C60B29F6CEAD005B9178 /* ClimeTodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeTodayCell.swift; sourceTree = "<group>"; };
+		0CF4C60E29F6D8C2005B9178 /* ClimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,8 @@
 		0CF4C5FB29F6B991005B9178 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
-				0CF4C5E829F6B89F005B9178 /* MainViewController.swift */,
+				0CF4C60D29F6D8AC005B9178 /* Model */,
+				0CF4C60629F6C9C9005B9178 /* View */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -119,6 +126,32 @@
 				0CF4C60429F6BEB5005B9178 /* UIView + Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0CF4C60629F6C9C9005B9178 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C5E829F6B89F005B9178 /* MainViewController.swift */,
+				0CF4C60729F6C9CF005B9178 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0CF4C60729F6C9CF005B9178 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C60B29F6CEAD005B9178 /* ClimeTodayCell.swift */,
+				0CF4C60929F6CA2C005B9178 /* ClimeDayCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0CF4C60D29F6D8AC005B9178 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C60E29F6D8C2005B9178 /* ClimeModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,9 +226,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */,
+				0CF4C60C29F6CEAD005B9178 /* ClimeTodayCell.swift in Sources */,
 				0CF4C60529F6BEB5005B9178 /* UIView + Extension.swift in Sources */,
 				0CF4C5E529F6B89F005B9178 /* AppDelegate.swift in Sources */,
+				0CF4C60A29F6CA2C005B9178 /* ClimeDayCell.swift in Sources */,
 				0CF4C60129F6BEA3005B9178 /* UIViewController + Extension.swift in Sources */,
+				0CF4C60F29F6D8C2005B9178 /* ClimeModel.swift in Sources */,
 				0CF4C5E729F6B89F005B9178 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
