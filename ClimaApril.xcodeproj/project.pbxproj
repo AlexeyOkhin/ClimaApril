@@ -44,6 +44,7 @@
 		0CF4C5D829F6B89F005B9178 = {
 			isa = PBXGroup;
 			children = (
+				0CF4C5FE29F6BC21005B9178 /* .gitignore */,
 				0CF4C5E329F6B89F005B9178 /* ClimaApril */,
 				0CF4C5E229F6B89F005B9178 /* Products */,
 			);
@@ -60,7 +61,6 @@
 		0CF4C5E329F6B89F005B9178 /* ClimaApril */ = {
 			isa = PBXGroup;
 			children = (
-				0CF4C5FE29F6BC21005B9178 /* .gitignore */,
 				0CF4C5FD29F6B9AD005B9178 /* Extensions */,
 				0CF4C5FC29F6B9A2005B9178 /* Services */,
 				0CF4C5FA29F6B97F005B9178 /* Modules */,
