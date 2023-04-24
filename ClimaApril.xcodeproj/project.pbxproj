@@ -13,6 +13,8 @@
 		0CF4C5EE29F6B8A7005B9178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CF4C5ED29F6B8A7005B9178 /* Assets.xcassets */; };
 		0CF4C5F129F6B8A7005B9178 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CF4C5EF29F6B8A7005B9178 /* LaunchScreen.storyboard */; };
 		0CF4C5FF29F6BC21005B9178 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0CF4C5FE29F6BC21005B9178 /* .gitignore */; };
+		0CF4C60129F6BEA3005B9178 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60029F6BEA3005B9178 /* UIViewController + Extension.swift */; };
+		0CF4C60529F6BEB5005B9178 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60429F6BEB5005B9178 /* UIView + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0CF4C5F029F6B8A7005B9178 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CF4C5F229F6B8A7005B9178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CF4C5FE29F6BC21005B9178 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0CF4C60029F6BEA3005B9178 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		0CF4C60429F6BEB5005B9178 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		0CF4C5E329F6B89F005B9178 /* ClimaApril */ = {
 			isa = PBXGroup;
 			children = (
+				0CF4C5FE29F6BC21005B9178 /* .gitignore */,
 				0CF4C5FD29F6B9AD005B9178 /* Extensions */,
 				0CF4C5FC29F6B9A2005B9178 /* Services */,
 				0CF4C5FA29F6B97F005B9178 /* Modules */,
@@ -80,7 +85,6 @@
 				0CF4C5EF29F6B8A7005B9178 /* LaunchScreen.storyboard */,
 				0CF4C5ED29F6B8A7005B9178 /* Assets.xcassets */,
 				0CF4C5F229F6B8A7005B9178 /* Info.plist */,
-				0CF4C5FE29F6BC21005B9178 /* .gitignore */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -111,6 +115,8 @@
 		0CF4C5FD29F6B9AD005B9178 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0CF4C60029F6BEA3005B9178 /* UIViewController + Extension.swift */,
+				0CF4C60429F6BEB5005B9178 /* UIView + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,7 +193,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */,
+				0CF4C60529F6BEB5005B9178 /* UIView + Extension.swift in Sources */,
 				0CF4C5E529F6B89F005B9178 /* AppDelegate.swift in Sources */,
+				0CF4C60129F6BEA3005B9178 /* UIViewController + Extension.swift in Sources */,
 				0CF4C5E729F6B89F005B9178 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
