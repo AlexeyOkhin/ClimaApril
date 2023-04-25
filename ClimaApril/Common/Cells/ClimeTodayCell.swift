@@ -17,8 +17,10 @@ private enum Constants {
 
     enum Dimension {
         static let sizeFontForLocation: CGFloat = 26.0
-        static let sizeFontForCurrentTemperature: CGFloat = 32
+        static let sizeFontForCurrentTemperature: CGFloat = 48
         static let sizeFontForCondition: CGFloat = 18
+        static let standardOffset: CGFloat = 16
+        static let imageSize: CGFloat = 125
     }
 
     enum Font {
@@ -34,7 +36,7 @@ final class ClimeTodayCell: UICollectionViewCell {
 
     // MARK: - Private properties
 
-    private lazy var locationLabel: UILabel = {
+    lazy var locationLabel: UILabel = {
         let label = UILabel()
         label.font =  .systemFont(ofSize: Constants.Dimension.sizeFontForLocation)
         label.textColor = Constants.Color.textLocation
@@ -43,35 +45,26 @@ final class ClimeTodayCell: UICollectionViewCell {
         return label
     }()
 
-    private lazy var currentTemperatureLabel: UILabel = {
+    lazy var currentTemperatureLabel: UILabel = {
         let label = UILabel()
-        label.font =  .systemFont(ofSize: Constants.Dimension.sizeFontForCurrentTemperature)
+        label.font = .boldSystemFont(ofSize: Constants.Dimension.sizeFontForCurrentTemperature)
         label.textColor = Constants.Color.textCurrentTemperature
         label.text = "21℃"
         return label
     }()
 
-    private lazy var conditionImageView: UIImageView = {
+    lazy var conditionImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "questionmark.square.dashed")
         return imageView
     }()
 
-    private lazy var conditionLabel: UILabel = {
+    lazy var conditionLabel: UILabel = {
         let label = UILabel()
         label.font =  .systemFont(ofSize: Constants.Dimension.sizeFontForCondition)
-        label.textColor = Constants.Color.textLocation
+        label.textColor = Constants.Color.textCondition
+        label.text = ""
         label.textAlignment = .center
-        label.text = "Пасмурно дождь"
-        return label
-    }()
-
-    private lazy var rangeTempLabel: UILabel = {
-        let label = UILabel()
-        label.font =  .systemFont(ofSize: Constants.Dimension.sizeFontForCondition)
-        label.textColor = Constants.Color.textLocation
-        label.textAlignment = .center
-        label.text = "макс 21 мин 18"
         return label
     }()
 
@@ -94,26 +87,24 @@ final class ClimeTodayCell: UICollectionViewCell {
     // MARK: - Private Methods
 
     private func setupUI() {
-        
-        contentView.addSubviews(locationLabel, currentTemperatureLabel, conditionImageView, conditionLabel, rangeTempLabel) {[
+
+        contentView.addSubviews(locationLabel, currentTemperatureLabel, conditionImageView, conditionLabel) {[
             locationLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             locationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             locationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
 
-            conditionImageView.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 16),
-            conditionImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -32),
-            conditionImageView.heightAnchor.constraint(equalToConstant: 64),
-            conditionImageView.widthAnchor.constraint(equalToConstant: 64),
+            conditionImageView.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: Constants.Dimension.standardOffset),
+            conditionImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -Constants.Dimension.standardOffset * 2),
+            conditionImageView.heightAnchor.constraint(equalToConstant: Constants.Dimension.imageSize),
+            conditionImageView.widthAnchor.constraint(equalToConstant: Constants.Dimension.imageSize),
 
-            currentTemperatureLabel.leadingAnchor.constraint(equalTo: conditionImageView.trailingAnchor, constant: 24),
+            currentTemperatureLabel.leadingAnchor.constraint(equalTo: conditionImageView.trailingAnchor, constant: Constants.Dimension.standardOffset),
             currentTemperatureLabel.centerYAnchor.constraint(equalTo: conditionImageView.centerYAnchor),
 
-            conditionLabel.topAnchor.constraint(equalTo: conditionImageView.bottomAnchor, constant: 8),
-            conditionLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-
-            rangeTempLabel.topAnchor.constraint(equalTo: conditionLabel.bottomAnchor, constant: 8),
-            rangeTempLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            rangeTempLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            conditionLabel.topAnchor.constraint(equalTo: conditionImageView.bottomAnchor, constant: Constants.Dimension.standardOffset / 2),
+            conditionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.Dimension.standardOffset),
+            conditionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.Dimension.standardOffset),
+            conditionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.Dimension.standardOffset)
 
         ]}
     }

@@ -6,16 +6,11 @@
 //
 
 import UIKit
+import SVGKit
 
 private enum Constants {
     enum Color {
         static let backgroundColor = UIColor.systemBackground
-    }
-
-    enum Dimension {
-        static let sectionHeaderHeight: CGFloat = 56.0
-        static let rowHeight: CGFloat = 100
-        static let numberSections = 2
     }
 }
 
@@ -24,44 +19,48 @@ private enum Section: Int, CaseIterable {
     case ClimeDay
 }
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     // MARK: - Private Properties
+    private var presenter: MainPresenterProtocol
+
+    private lazy var refreshControl = UIRefreshControl()
+    private lazy var compositionLayout = ClimeCompositionLayout()
 
     private lazy var climeCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCompositionalLayout())
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: compositionLayout.configureCompositionalLayout())
         collectionView.register(ClimeTodayCell.self, forCellWithReuseIdentifier: ClimeTodayCell.reuseIdentifier)
         collectionView.register(ClimeDayCell.self, forCellWithReuseIdentifier: ClimeDayCell.reuseIdentifier)
         collectionView.dataSource = self
         return collectionView
     }()
 
+    // MARK: - Init
+
+    init (presenter: MainPresenterProtocol) {
+
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
-        let climeService = ClimeServices(networkService: NetworkService(), requestFactory: URLRequestFactory(latitude: 51.7727, longitude: 55.0988))
-        climeService.getClime { [weak self] result in
-            switch result {
-
-            case .success(let climeModel):
-
-                print(climeModel)
-
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self?.showErrorAlert(and: error.localizedDescription)
-                }
-
-            }
-        }
+        settingRefreshControl()
+        presenter.loadClime()
     }
+}
 
     // MARK: - Private Methods
+private extension MainViewController {
 
-    private func setupUI() {
+    func setupUI() {
 
         view.backgroundColor = .systemBackground
         view.addSubviews(climeCollectionView) {[
@@ -72,48 +71,15 @@ class MainViewController: UIViewController {
         ]}
     }
 
-    func configureCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        let layout = UICollectionViewCompositionalLayout(sectionProvider: { [weak self] sectionId, environment in
-            switch sectionId {
-            case 0: return self?.createSectionLayout1(environment: environment)
-            case 1: return self?.createSectionLayout2(environment: environment)
-            default: return self?.createSectionLayout2(environment: environment)
-            }
-        })
-
-        return layout
+    func settingRefreshControl() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
+        climeCollectionView.refreshControl = refreshControl
     }
 
-    func createSectionLayout1(environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(300))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(300))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-
-        let section = NSCollectionLayoutSection(group: group)
-
-        return section
-    }
-
-    func createSectionLayout2(environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(1.0))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-
-        let section = NSCollectionLayoutSection(group: group)
-
-        return section
+    @objc
+    func didRefresh() {
+        presenter.loadClime()
     }
 }
 
@@ -136,7 +102,12 @@ extension MainViewController: UICollectionViewDataSource {
         case .ClimeToday:
             return 1
         case .ClimeDay:
-            return 7
+            guard
+                let forecastsCount = presenter.clime?.forecasts.count
+            else {
+                return 0
+            }
+            return forecastsCount
         }
     }
 
@@ -156,6 +127,14 @@ extension MainViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
 
+            let model = presenter.clime
+            guard let model else { return cell }
+            cell.locationLabel.text = model.geoObject.locality.name
+            cell.currentTemperatureLabel.text = "\(model.fact.temp) ℃"
+            let icon = model.fact.icon
+            let stringUrl = presenter.getUrlIcon(with: icon)
+            cell.conditionImageView.loadImage(from: stringUrl)
+            cell.conditionLabel.text = model.fact.condition
             return cell
         case .ClimeDay:
             guard
@@ -163,8 +142,32 @@ extension MainViewController: UICollectionViewDataSource {
             else {
                 return UICollectionViewCell()
             }
-
+            let model = presenter.clime?.forecasts[indexPath.row]
+            guard let model else { return cell }
+            cell.weekdayLabel.text = presenter.getDayWeek(at: indexPath.row)
+            let icon = model.parts.dayShort.icon
+            let stringUrl = presenter.getUrlIcon(with: icon)
+            cell.conditionImageView.loadImage(from: stringUrl)
+            let minTemp = model.parts.dayShort.tempMin
+            let temp = model.parts.dayShort.temp
+            cell.rangeTempLabel.text = "\(minTemp)℃...\(temp)℃"
             return cell
         }
+    }
+}
+
+// MARK: - Extension MainViewProtocol
+
+extension MainViewController: MainViewProtocol {
+    func reloadData() {
+        climeCollectionView.reloadData()
+    }
+
+    func refreshData() {
+        refreshControl.endRefreshing()
+    }
+
+    func showError(with error: String) {
+        showErrorAlert(and: error)
     }
 }
