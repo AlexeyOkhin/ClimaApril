@@ -18,6 +18,7 @@
 		0CF4C60A29F6CA2C005B9178 /* ClimeDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60929F6CA2C005B9178 /* ClimeDayCell.swift */; };
 		0CF4C60C29F6CEAD005B9178 /* ClimeTodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60B29F6CEAD005B9178 /* ClimeTodayCell.swift */; };
 		0CF4C60F29F6D8C2005B9178 /* ClimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60E29F6D8C2005B9178 /* ClimeModel.swift */; };
+		0CF4C61129F79DD7005B9178 /* ClimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61029F79DD7005B9178 /* ClimeError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0CF4C60929F6CA2C005B9178 /* ClimeDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeDayCell.swift; sourceTree = "<group>"; };
 		0CF4C60B29F6CEAD005B9178 /* ClimeTodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeTodayCell.swift; sourceTree = "<group>"; };
 		0CF4C60E29F6D8C2005B9178 /* ClimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeModel.swift; sourceTree = "<group>"; };
+		0CF4C61029F79DD7005B9178 /* ClimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		0CF4C5FC29F6B9A2005B9178 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0CF4C61029F79DD7005B9178 /* ClimeError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				0CF4C60529F6BEB5005B9178 /* UIView + Extension.swift in Sources */,
 				0CF4C5E529F6B89F005B9178 /* AppDelegate.swift in Sources */,
 				0CF4C60A29F6CA2C005B9178 /* ClimeDayCell.swift in Sources */,
+				0CF4C61129F79DD7005B9178 /* ClimeError.swift in Sources */,
 				0CF4C60129F6BEA3005B9178 /* UIViewController + Extension.swift in Sources */,
 				0CF4C60F29F6D8C2005B9178 /* ClimeModel.swift in Sources */,
 				0CF4C5E729F6B89F005B9178 /* SceneDelegate.swift in Sources */,
