@@ -19,6 +19,7 @@
 		0CF4C60C29F6CEAD005B9178 /* ClimeTodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60B29F6CEAD005B9178 /* ClimeTodayCell.swift */; };
 		0CF4C60F29F6D8C2005B9178 /* ClimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60E29F6D8C2005B9178 /* ClimeModel.swift */; };
 		0CF4C61129F79DD7005B9178 /* ClimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61029F79DD7005B9178 /* ClimeError.swift */; };
+		0CF4C61329F79E20005B9178 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61229F79E20005B9178 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		0CF4C60B29F6CEAD005B9178 /* ClimeTodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeTodayCell.swift; sourceTree = "<group>"; };
 		0CF4C60E29F6D8C2005B9178 /* ClimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeModel.swift; sourceTree = "<group>"; };
 		0CF4C61029F79DD7005B9178 /* ClimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeError.swift; sourceTree = "<group>"; };
+		0CF4C61229F79E20005B9178 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				0CF4C61029F79DD7005B9178 /* ClimeError.swift */,
+				0CF4C61229F79E20005B9178 /* NetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF4C61329F79E20005B9178 /* NetworkService.swift in Sources */,
 				0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */,
 				0CF4C60C29F6CEAD005B9178 /* ClimeTodayCell.swift in Sources */,
 				0CF4C60529F6BEB5005B9178 /* UIView + Extension.swift in Sources */,
