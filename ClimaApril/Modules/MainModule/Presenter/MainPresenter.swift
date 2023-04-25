@@ -28,9 +28,9 @@ final class MainPresenter {
 
 extension MainPresenter: MainPresenterProtocol {
 
-    func getUrlIcon() -> String {
-        guard let stringIcon = clime?.fact.icon else { return ""}
-        let stringUrl = "https://yastatic.net/weather/i/icons/funky/dark/" + stringIcon + ".svg"
+    func getUrlIcon(with icon: String) -> String {
+//        guard let stringIcon = clime?.fact.icon else { return ""}
+        let stringUrl = "https://yastatic.net/weather/i/icons/funky/dark/" + icon + ".svg"
         return stringUrl
     }
 

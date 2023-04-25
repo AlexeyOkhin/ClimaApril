@@ -31,20 +31,20 @@ final class ClimeDayCell: UICollectionViewCell {
 
     // MARK: - Private properties
 
-    private lazy var weekdayLabel: UILabel = {
+    lazy var weekdayLabel: UILabel = {
         let label = UILabel()
         label.text = "Сегодня"
         return label
     }()
 
-    private lazy var conditionImageView: UIImageView = {
+    lazy var conditionImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(systemName: "questionmark.square.dashed")
         return imageView
     }()
 
-    private lazy var rangeTempLabel: UILabel = {
+    lazy var rangeTempLabel: UILabel = {
         let label = UILabel()
         label.text = "от 21 до 40"
         return label

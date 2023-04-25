@@ -29,7 +29,12 @@ struct FactModel: Decodable {
 }
 
 struct ForecastsModel: Decodable {
-    let dateTs: Date
+    let dateTs: Double
+    var dayWeek: String {
+        let date = Date(timeIntervalSince1970: dateTs)
+        let dayWeek = date.toString("EEE")
+        return dayWeek
+    }
     let week: Int
     let parts: PartModel
 }

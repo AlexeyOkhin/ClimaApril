@@ -12,6 +12,6 @@ protocol MainPresenterProtocol {
     var clime: ClimeModel? { get }
 
     func loadClime()
-    func getUrlIcon() -> String
+    func getUrlIcon(with: String) -> String
 
 }

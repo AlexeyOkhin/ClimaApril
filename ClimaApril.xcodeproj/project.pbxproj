@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C2A806C29F80E2A00860486 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A806B29F80E2A00860486 /* Date + Extension.swift */; };
+		0C2A806E29F817C100860486 /* ClimeCompositionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A806D29F817C100860486 /* ClimeCompositionLayout.swift */; };
 		0CF4C5E529F6B89F005B9178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C5E429F6B89F005B9178 /* AppDelegate.swift */; };
 		0CF4C5E729F6B89F005B9178 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C5E629F6B89F005B9178 /* SceneDelegate.swift */; };
 		0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C5E829F6B89F005B9178 /* MainViewController.swift */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		09B903D30FE1CADF59277F45 /* Pods_ClimaApril.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClimaApril.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2A806B29F80E2A00860486 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		0C2A806D29F817C100860486 /* ClimeCompositionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeCompositionLayout.swift; sourceTree = "<group>"; };
 		0CF4C5E129F6B89F005B9178 /* ClimaApril.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimaApril.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CF4C5E429F6B89F005B9178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CF4C5E629F6B89F005B9178 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C2A806F29F817F200860486 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C60729F6C9CF005B9178 /* Cells */,
+				0C2A806D29F817C100860486 /* ClimeCompositionLayout.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		0CF4C5D829F6B89F005B9178 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +111,7 @@
 		0CF4C5E329F6B89F005B9178 /* ClimaApril */ = {
 			isa = PBXGroup;
 			children = (
+				0C2A806F29F817F200860486 /* Common */,
 				0CF4C61C29F7C70F005B9178 /* Assembly */,
 				0CF4C5FD29F6B9AD005B9178 /* Extensions */,
 				0CF4C5FC29F6B9A2005B9178 /* Services */,
@@ -164,6 +178,7 @@
 				0CF4C60029F6BEA3005B9178 /* UIViewController + Extension.swift */,
 				0CF4C60429F6BEB5005B9178 /* UIView + Extension.swift */,
 				0CF4C62929F7E050005B9178 /* UIImageView + Extension.swift */,
+				0C2A806B29F80E2A00860486 /* Date + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,7 +189,6 @@
 				0CF4C5E829F6B89F005B9178 /* MainViewController.swift */,
 				0CF4C62129F7CB9B005B9178 /* MainViewProtocol.swift */,
 				0CF4C62329F7CBB1005B9178 /* MainPresenterProtocol.swift */,
-				0CF4C60729F6C9CF005B9178 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,7 +241,6 @@
 				551B6226F25EC30ED56BDFA9 /* Pods-ClimaApril.debug.xcconfig */,
 				FA3D6F5AFA789BDAD3AE4B0A /* Pods-ClimaApril.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -349,6 +362,7 @@
 				0CF4C61329F79E20005B9178 /* NetworkService.swift in Sources */,
 				0CF4C61E29F7C960005B9178 /* ServicesAssembly.swift in Sources */,
 				0CF4C61B29F7C6AA005B9178 /* AssemblyModules.swift in Sources */,
+				0C2A806E29F817C100860486 /* ClimeCompositionLayout.swift in Sources */,
 				0CF4C62229F7CB9B005B9178 /* MainViewProtocol.swift in Sources */,
 				0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */,
 				0CF4C61529F79EC7005B9178 /* ClimeServices.swift in Sources */,
@@ -366,6 +380,7 @@
 				0CF4C62429F7CBB1005B9178 /* MainPresenterProtocol.swift in Sources */,
 				0CF4C61729F79F83005B9178 /* URLRequestFactory.swift in Sources */,
 				0CF4C5E729F6B89F005B9178 /* SceneDelegate.swift in Sources */,
+				0C2A806C29F80E2A00860486 /* Date + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,12 +12,6 @@ private enum Constants {
     enum Color {
         static let backgroundColor = UIColor.systemBackground
     }
-
-    enum Dimension {
-        static let sectionHeaderHeight: CGFloat = 56.0
-        static let rowHeight: CGFloat = 100
-        static let numberSections = 2
-    }
 }
 
 private enum Section: Int, CaseIterable {
@@ -25,15 +19,16 @@ private enum Section: Int, CaseIterable {
     case ClimeDay
 }
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     // MARK: - Private Properties
     private var presenter: MainPresenterProtocol
 
     private lazy var refreshControl = UIRefreshControl()
+    private lazy var compositionLayout = ClimeCompositionLayout()
 
     private lazy var climeCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCompositionalLayout())
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: compositionLayout.configureCompositionalLayout())
         collectionView.register(ClimeTodayCell.self, forCellWithReuseIdentifier: ClimeTodayCell.reuseIdentifier)
         collectionView.register(ClimeDayCell.self, forCellWithReuseIdentifier: ClimeDayCell.reuseIdentifier)
         collectionView.dataSource = self
@@ -86,50 +81,6 @@ private extension MainViewController {
     func didRefresh() {
         presenter.loadClime()
     }
-
-    func configureCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        let layout = UICollectionViewCompositionalLayout(sectionProvider: { [weak self] sectionId, environment in
-            switch sectionId {
-            case 0: return self?.createSectionLayoutDayClime(environment: environment)
-            case 1: return self?.createSectionLayoutForWeekClime(environment: environment)
-            default: return self?.createSectionLayoutForWeekClime(environment: environment)
-            }
-        })
-
-        return layout
-    }
-
-    func createSectionLayoutDayClime(environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(300))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(300))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-
-        let section = NSCollectionLayoutSection(group: group)
-
-        return section
-    }
-
-    func createSectionLayoutForWeekClime(environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(1.0))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-
-        let section = NSCollectionLayoutSection(group: group)
-
-        return section
-    }
 }
 
 // MARK: - Extension UITableViewDataSource
@@ -177,16 +128,13 @@ extension MainViewController: UICollectionViewDataSource {
             }
 
             let model = presenter.clime
-            guard
-                let model
-            else {
-                return cell
-            }
+            guard let model else { return cell }
             cell.locationLabel.text = model.geoObject.locality.name
             cell.currentTemperatureLabel.text = "\(model.fact.temp) ℃"
-            let stringUrl = presenter.getUrlIcon()
+            let icon = model.fact.icon
+            let stringUrl = presenter.getUrlIcon(with: icon)
             cell.conditionImageView.loadImage(from: stringUrl)
-
+            cell.conditionLabel.text = model.fact.condition
             return cell
         case .ClimeDay:
             guard
@@ -194,7 +142,15 @@ extension MainViewController: UICollectionViewDataSource {
             else {
                 return UICollectionViewCell()
             }
-
+            let model = presenter.clime?.forecasts[indexPath.row]
+            guard let model else { return cell }
+            cell.weekdayLabel.text = model.dayWeek
+            let icon = model.parts.dayShort.icon
+            let stringUrl = presenter.getUrlIcon(with: icon)
+            cell.conditionImageView.loadImage(from: stringUrl)
+            let minTemp = model.parts.dayShort.tempMin
+            let temp = model.parts.dayShort.temp
+            cell.rangeTempLabel.text = "от \(minTemp)℃ до \(temp)℃"
             return cell
         }
     }
