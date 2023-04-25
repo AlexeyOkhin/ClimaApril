@@ -27,6 +27,9 @@ private enum Section: Int, CaseIterable {
 class MainViewController: UIViewController {
 
     // MARK: - Private Properties
+    private var presenter: MainPresenterProtocol
+
+    private lazy var refreshControl = UIRefreshControl()
 
     private lazy var climeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCompositionalLayout())
@@ -36,32 +39,32 @@ class MainViewController: UIViewController {
         return collectionView
     }()
 
+    // MARK: - Init
+
+    init (presenter: MainPresenterProtocol) {
+
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
-        let climeService = ClimeServices(networkService: NetworkService(), requestFactory: URLRequestFactory(latitude: 51.7727, longitude: 55.0988))
-        climeService.getClime { [weak self] result in
-            switch result {
-
-            case .success(let climeModel):
-
-                print(climeModel)
-
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self?.showErrorAlert(and: error.localizedDescription)
-                }
-
-            }
-        }
+        settingRefreshControl()
+        presenter.loadClime()
     }
+}
 
     // MARK: - Private Methods
+private extension MainViewController {
 
-    private func setupUI() {
+    func setupUI() {
 
         view.backgroundColor = .systemBackground
         view.addSubviews(climeCollectionView) {[
@@ -72,19 +75,30 @@ class MainViewController: UIViewController {
         ]}
     }
 
+    func settingRefreshControl() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
+        climeCollectionView.refreshControl = refreshControl
+    }
+
+    @objc
+    func didRefresh() {
+        presenter.loadClime()
+    }
+
     func configureCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout(sectionProvider: { [weak self] sectionId, environment in
             switch sectionId {
-            case 0: return self?.createSectionLayout1(environment: environment)
-            case 1: return self?.createSectionLayout2(environment: environment)
-            default: return self?.createSectionLayout2(environment: environment)
+            case 0: return self?.createSectionLayoutDayClime(environment: environment)
+            case 1: return self?.createSectionLayoutForWeekClime(environment: environment)
+            default: return self?.createSectionLayoutForWeekClime(environment: environment)
             }
         })
 
         return layout
     }
 
-    func createSectionLayout1(environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+    func createSectionLayoutDayClime(environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .estimated(300))
@@ -100,7 +114,7 @@ class MainViewController: UIViewController {
         return section
     }
 
-    func createSectionLayout2(environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+    func createSectionLayoutForWeekClime(environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .estimated(1.0))
@@ -136,7 +150,12 @@ extension MainViewController: UICollectionViewDataSource {
         case .ClimeToday:
             return 1
         case .ClimeDay:
-            return 7
+            guard
+                let forecastsCount = presenter.clime?.forecasts.count
+            else {
+                return 0
+            }
+            return forecastsCount
         }
     }
 
@@ -156,6 +175,15 @@ extension MainViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
 
+            let model = presenter.clime
+            guard
+                let model
+            else {
+                return cell
+            }
+            cell.locationLabel.text = model.geoObject.locality.name
+            cell.currentTemperatureLabel.text = "\(model.fact.temp) ℃"
+
             return cell
         case .ClimeDay:
             guard
@@ -167,4 +195,22 @@ extension MainViewController: UICollectionViewDataSource {
             return cell
         }
     }
+}
+
+// MARK: - Extension MainViewProtocol
+
+extension MainViewController: MainViewProtocol {
+    func reloadData() {
+        climeCollectionView.reloadData()
+    }
+
+    func refreshData() {
+        refreshControl.endRefreshing()
+    }
+
+    func showError(with error: String) {
+        showErrorAlert(and: error)
+    }
+
+
 }

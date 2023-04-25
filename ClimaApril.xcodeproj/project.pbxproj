@@ -22,9 +22,12 @@
 		0CF4C61329F79E20005B9178 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61229F79E20005B9178 /* NetworkService.swift */; };
 		0CF4C61529F79EC7005B9178 /* ClimeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61429F79EC7005B9178 /* ClimeServices.swift */; };
 		0CF4C61729F79F83005B9178 /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */; };
-		0CF4C61929F7A993005B9178 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61829F7A993005B9178 /* LocationService.swift */; };
+		0CF4C61929F7A993005B9178 /* ClimeLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61829F7A993005B9178 /* ClimeLocationService.swift */; };
 		0CF4C61B29F7C6AA005B9178 /* AssemblyModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61A29F7C6AA005B9178 /* AssemblyModules.swift */; };
 		0CF4C61E29F7C960005B9178 /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61D29F7C960005B9178 /* ServicesAssembly.swift */; };
+		0CF4C62229F7CB9B005B9178 /* MainViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C62129F7CB9B005B9178 /* MainViewProtocol.swift */; };
+		0CF4C62429F7CBB1005B9178 /* MainPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C62329F7CBB1005B9178 /* MainPresenterProtocol.swift */; };
+		0CF4C62629F7CBC5005B9178 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C62529F7CBC5005B9178 /* MainPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,9 +48,12 @@
 		0CF4C61229F79E20005B9178 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0CF4C61429F79EC7005B9178 /* ClimeServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeServices.swift; sourceTree = "<group>"; };
 		0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
-		0CF4C61829F7A993005B9178 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		0CF4C61829F7A993005B9178 /* ClimeLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeLocationService.swift; sourceTree = "<group>"; };
 		0CF4C61A29F7C6AA005B9178 /* AssemblyModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModules.swift; sourceTree = "<group>"; };
 		0CF4C61D29F7C960005B9178 /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
+		0CF4C62129F7CB9B005B9178 /* MainViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewProtocol.swift; sourceTree = "<group>"; };
+		0CF4C62329F7CBB1005B9178 /* MainPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterProtocol.swift; sourceTree = "<group>"; };
+		0CF4C62529F7CBC5005B9178 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		0CF4C5FB29F6B991005B9178 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				0CF4C61F29F7CB5C005B9178 /* Presenter */,
 				0CF4C60D29F6D8AC005B9178 /* Model */,
 				0CF4C60629F6C9C9005B9178 /* View */,
 			);
@@ -134,7 +141,7 @@
 				0CF4C61229F79E20005B9178 /* NetworkService.swift */,
 				0CF4C61429F79EC7005B9178 /* ClimeServices.swift */,
 				0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */,
-				0CF4C61829F7A993005B9178 /* LocationService.swift */,
+				0CF4C61829F7A993005B9178 /* ClimeLocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -152,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				0CF4C5E829F6B89F005B9178 /* MainViewController.swift */,
+				0CF4C62129F7CB9B005B9178 /* MainViewProtocol.swift */,
+				0CF4C62329F7CBB1005B9178 /* MainPresenterProtocol.swift */,
 				0CF4C60729F6C9CF005B9178 /* Cells */,
 			);
 			path = View;
@@ -181,6 +190,14 @@
 				0CF4C61D29F7C960005B9178 /* ServicesAssembly.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		0CF4C61F29F7CB5C005B9178 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C62529F7CBC5005B9178 /* MainPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +274,7 @@
 				0CF4C61329F79E20005B9178 /* NetworkService.swift in Sources */,
 				0CF4C61E29F7C960005B9178 /* ServicesAssembly.swift in Sources */,
 				0CF4C61B29F7C6AA005B9178 /* AssemblyModules.swift in Sources */,
+				0CF4C62229F7CB9B005B9178 /* MainViewProtocol.swift in Sources */,
 				0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */,
 				0CF4C61529F79EC7005B9178 /* ClimeServices.swift in Sources */,
 				0CF4C60C29F6CEAD005B9178 /* ClimeTodayCell.swift in Sources */,
@@ -265,8 +283,10 @@
 				0CF4C60A29F6CA2C005B9178 /* ClimeDayCell.swift in Sources */,
 				0CF4C61129F79DD7005B9178 /* ClimeError.swift in Sources */,
 				0CF4C60129F6BEA3005B9178 /* UIViewController + Extension.swift in Sources */,
-				0CF4C61929F7A993005B9178 /* LocationService.swift in Sources */,
+				0CF4C61929F7A993005B9178 /* ClimeLocationService.swift in Sources */,
+				0CF4C62629F7CBC5005B9178 /* MainPresenter.swift in Sources */,
 				0CF4C60F29F6D8C2005B9178 /* ClimeModel.swift in Sources */,
+				0CF4C62429F7CBB1005B9178 /* MainPresenterProtocol.swift in Sources */,
 				0CF4C61729F79F83005B9178 /* URLRequestFactory.swift in Sources */,
 				0CF4C5E729F6B89F005B9178 /* SceneDelegate.swift in Sources */,
 			);

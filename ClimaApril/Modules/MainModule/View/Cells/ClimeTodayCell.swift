@@ -34,7 +34,7 @@ final class ClimeTodayCell: UICollectionViewCell {
 
     // MARK: - Private properties
 
-    private lazy var locationLabel: UILabel = {
+    lazy var locationLabel: UILabel = {
         let label = UILabel()
         label.font =  .systemFont(ofSize: Constants.Dimension.sizeFontForLocation)
         label.textColor = Constants.Color.textLocation
@@ -43,7 +43,7 @@ final class ClimeTodayCell: UICollectionViewCell {
         return label
     }()
 
-    private lazy var currentTemperatureLabel: UILabel = {
+    lazy var currentTemperatureLabel: UILabel = {
         let label = UILabel()
         label.font =  .systemFont(ofSize: Constants.Dimension.sizeFontForCurrentTemperature)
         label.textColor = Constants.Color.textCurrentTemperature
@@ -51,28 +51,10 @@ final class ClimeTodayCell: UICollectionViewCell {
         return label
     }()
 
-    private lazy var conditionImageView: UIImageView = {
+    lazy var conditionImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "questionmark.square.dashed")
         return imageView
-    }()
-
-    private lazy var conditionLabel: UILabel = {
-        let label = UILabel()
-        label.font =  .systemFont(ofSize: Constants.Dimension.sizeFontForCondition)
-        label.textColor = Constants.Color.textLocation
-        label.textAlignment = .center
-        label.text = "Пасмурно дождь"
-        return label
-    }()
-
-    private lazy var rangeTempLabel: UILabel = {
-        let label = UILabel()
-        label.font =  .systemFont(ofSize: Constants.Dimension.sizeFontForCondition)
-        label.textColor = Constants.Color.textLocation
-        label.textAlignment = .center
-        label.text = "макс 21 мин 18"
-        return label
     }()
 
     // MARK: - Init
@@ -95,25 +77,19 @@ final class ClimeTodayCell: UICollectionViewCell {
 
     private func setupUI() {
         
-        contentView.addSubviews(locationLabel, currentTemperatureLabel, conditionImageView, conditionLabel, rangeTempLabel) {[
+        contentView.addSubviews(locationLabel, currentTemperatureLabel, conditionImageView) {[
             locationLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             locationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             locationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
 
             conditionImageView.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 16),
             conditionImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -32),
-            conditionImageView.heightAnchor.constraint(equalToConstant: 64),
-            conditionImageView.widthAnchor.constraint(equalToConstant: 64),
+            conditionImageView.heightAnchor.constraint(equalToConstant: 125),
+            conditionImageView.widthAnchor.constraint(equalToConstant: 125),
+            conditionImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
 
             currentTemperatureLabel.leadingAnchor.constraint(equalTo: conditionImageView.trailingAnchor, constant: 24),
-            currentTemperatureLabel.centerYAnchor.constraint(equalTo: conditionImageView.centerYAnchor),
-
-            conditionLabel.topAnchor.constraint(equalTo: conditionImageView.bottomAnchor, constant: 8),
-            conditionLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-
-            rangeTempLabel.topAnchor.constraint(equalTo: conditionLabel.bottomAnchor, constant: 8),
-            rangeTempLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            rangeTempLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            currentTemperatureLabel.centerYAnchor.constraint(equalTo: conditionImageView.centerYAnchor)
 
         ]}
     }

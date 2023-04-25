@@ -1,5 +1,5 @@
 //
-//  LocationService.swift
+//  ClimeLocationService.swift
 //  ClimaApril
 //
 //  Created by Djinsolobzik on 25.04.2023.
@@ -12,6 +12,8 @@ protocol ClimeLocationServiceProtocol {
     func getLocation()
 }
 
-class ClimeLocationService {
-    
+class ClimeLocationService: ClimeLocationServiceProtocol {
+    func getLocation() {
+        print("")
+    }
 }

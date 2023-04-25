@@ -7,11 +7,6 @@
 
 import Foundation
 
-struct WeatherResponse: Codable {
-    let now: Int
-}
-
-
 struct ClimeModel: Decodable {
     let geoObject: GeoObjectModel
     let fact: FactModel

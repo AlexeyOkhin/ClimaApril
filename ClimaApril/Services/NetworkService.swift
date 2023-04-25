@@ -14,7 +14,7 @@ class NetworkService {
     init() {
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = [
-            "X-Yandex-API-Key": "pastApiKey"
+            "X-Yandex-API-Key": ""
         ]
         self.session = URLSession(configuration: configuration)
     }
