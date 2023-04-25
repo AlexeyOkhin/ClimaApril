@@ -23,6 +23,8 @@
 		0CF4C61529F79EC7005B9178 /* ClimeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61429F79EC7005B9178 /* ClimeServices.swift */; };
 		0CF4C61729F79F83005B9178 /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */; };
 		0CF4C61929F7A993005B9178 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61829F7A993005B9178 /* LocationService.swift */; };
+		0CF4C61B29F7C6AA005B9178 /* AssemblyModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61A29F7C6AA005B9178 /* AssemblyModules.swift */; };
+		0CF4C61E29F7C960005B9178 /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61D29F7C960005B9178 /* ServicesAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		0CF4C61429F79EC7005B9178 /* ClimeServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeServices.swift; sourceTree = "<group>"; };
 		0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
 		0CF4C61829F7A993005B9178 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		0CF4C61A29F7C6AA005B9178 /* AssemblyModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModules.swift; sourceTree = "<group>"; };
+		0CF4C61D29F7C960005B9178 /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		0CF4C5E329F6B89F005B9178 /* ClimaApril */ = {
 			isa = PBXGroup;
 			children = (
+				0CF4C61C29F7C70F005B9178 /* Assembly */,
 				0CF4C5FD29F6B9AD005B9178 /* Extensions */,
 				0CF4C5FC29F6B9A2005B9178 /* Services */,
 				0CF4C5FA29F6B97F005B9178 /* Modules */,
@@ -169,6 +174,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0CF4C61C29F7C70F005B9178 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C61A29F7C6AA005B9178 /* AssemblyModules.swift */,
+				0CF4C61D29F7C960005B9178 /* ServicesAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CF4C61329F79E20005B9178 /* NetworkService.swift in Sources */,
+				0CF4C61E29F7C960005B9178 /* ServicesAssembly.swift in Sources */,
+				0CF4C61B29F7C6AA005B9178 /* AssemblyModules.swift in Sources */,
 				0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */,
 				0CF4C61529F79EC7005B9178 /* ClimeServices.swift in Sources */,
 				0CF4C60C29F6CEAD005B9178 /* ClimeTodayCell.swift in Sources */,
