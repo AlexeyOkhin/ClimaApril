@@ -11,8 +11,12 @@ class NetworkService {
 
     private let session: URLSession
 
-    init(session: URLSession = .shared) {
-        self.session = session
+    init() {
+        let configuration = URLSessionConfiguration.default
+        configuration.httpAdditionalHeaders = [
+            "X-Yandex-API-Key": "pastApiKey"
+        ]
+        self.session = URLSession(configuration: configuration)
     }
 
     func sendRequest<T: Decodable>(_ request: URLRequest, completion: @escaping (Result<T, Error>) -> Void) {
@@ -29,9 +33,9 @@ class NetworkService {
 
             do {
                 try self?.handleStatusCode(response: response)
-
-                let model = try JSONDecoder().decode(T.self, from: data)
-
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let model = try decoder.decode(T.self, from: data)
                 completion(.success(model))
             } catch {
                 completion(.failure(error))
@@ -42,7 +46,9 @@ class NetworkService {
 
 private extension NetworkService {
     func handleStatusCode(response: URLResponse?) throws {
-        guard let httpResponse = response as? HTTPURLResponse else {
+        guard
+            let httpResponse = response as? HTTPURLResponse
+        else {
             return
         }
 

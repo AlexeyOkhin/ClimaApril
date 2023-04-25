@@ -20,6 +20,9 @@
 		0CF4C60F29F6D8C2005B9178 /* ClimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60E29F6D8C2005B9178 /* ClimeModel.swift */; };
 		0CF4C61129F79DD7005B9178 /* ClimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61029F79DD7005B9178 /* ClimeError.swift */; };
 		0CF4C61329F79E20005B9178 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61229F79E20005B9178 /* NetworkService.swift */; };
+		0CF4C61529F79EC7005B9178 /* ClimeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61429F79EC7005B9178 /* ClimeServices.swift */; };
+		0CF4C61729F79F83005B9178 /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */; };
+		0CF4C61929F7A993005B9178 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61829F7A993005B9178 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		0CF4C60E29F6D8C2005B9178 /* ClimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeModel.swift; sourceTree = "<group>"; };
 		0CF4C61029F79DD7005B9178 /* ClimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeError.swift; sourceTree = "<group>"; };
 		0CF4C61229F79E20005B9178 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0CF4C61429F79EC7005B9178 /* ClimeServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeServices.swift; sourceTree = "<group>"; };
+		0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
+		0CF4C61829F7A993005B9178 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,9 @@
 			children = (
 				0CF4C61029F79DD7005B9178 /* ClimeError.swift */,
 				0CF4C61229F79E20005B9178 /* NetworkService.swift */,
+				0CF4C61429F79EC7005B9178 /* ClimeServices.swift */,
+				0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */,
+				0CF4C61829F7A993005B9178 /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -233,13 +242,16 @@
 			files = (
 				0CF4C61329F79E20005B9178 /* NetworkService.swift in Sources */,
 				0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */,
+				0CF4C61529F79EC7005B9178 /* ClimeServices.swift in Sources */,
 				0CF4C60C29F6CEAD005B9178 /* ClimeTodayCell.swift in Sources */,
 				0CF4C60529F6BEB5005B9178 /* UIView + Extension.swift in Sources */,
 				0CF4C5E529F6B89F005B9178 /* AppDelegate.swift in Sources */,
 				0CF4C60A29F6CA2C005B9178 /* ClimeDayCell.swift in Sources */,
 				0CF4C61129F79DD7005B9178 /* ClimeError.swift in Sources */,
 				0CF4C60129F6BEA3005B9178 /* UIViewController + Extension.swift in Sources */,
+				0CF4C61929F7A993005B9178 /* LocationService.swift in Sources */,
 				0CF4C60F29F6D8C2005B9178 /* ClimeModel.swift in Sources */,
+				0CF4C61729F79F83005B9178 /* URLRequestFactory.swift in Sources */,
 				0CF4C5E729F6B89F005B9178 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

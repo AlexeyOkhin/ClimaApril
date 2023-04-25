@@ -41,6 +41,22 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+
+        let climeService = ClimeServices(networkService: NetworkService(), requestFactory: URLRequestFactory(latitude: 51.7727, longitude: 55.0988))
+        climeService.getClime { [weak self] result in
+            switch result {
+
+            case .success(let climeModel):
+
+                print(climeModel)
+
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showErrorAlert(and: error.localizedDescription)
+                }
+
+            }
+        }
     }
 
     // MARK: - Private Methods

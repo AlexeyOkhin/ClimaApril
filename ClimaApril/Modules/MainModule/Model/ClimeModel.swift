@@ -7,11 +7,16 @@
 
 import Foundation
 
+struct WeatherResponse: Codable {
+    let now: Int
+}
+
 
 struct ClimeModel: Decodable {
     let geoObject: GeoObjectModel
     let fact: FactModel
-    let forecasts: ForecastsModel
+    let forecasts: [ForecastsModel]
+    let now: Int
 }
 
 struct GeoObjectModel: Decodable {
@@ -29,10 +34,6 @@ struct FactModel: Decodable {
 }
 
 struct ForecastsModel: Decodable {
-    let forecast: [WeekClime]
-}
-
-struct WeekClime: Decodable {
     let dateTs: Date
     let week: Int
     let parts: PartModel
