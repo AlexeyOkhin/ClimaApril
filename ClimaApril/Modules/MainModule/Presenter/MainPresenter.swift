@@ -28,6 +28,12 @@ final class MainPresenter {
 
 extension MainPresenter: MainPresenterProtocol {
 
+    func getUrlIcon() -> String {
+        guard let stringIcon = clime?.fact.icon else { return ""}
+        let stringUrl = "https://yastatic.net/weather/i/icons/funky/dark/" + stringIcon + ".svg"
+        return stringUrl
+    }
+
     func loadClime() {
         climeService.getClime { [weak self] result in
             switch result {

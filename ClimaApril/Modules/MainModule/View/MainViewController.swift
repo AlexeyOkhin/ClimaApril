@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVGKit
 
 private enum Constants {
     enum Color {
@@ -183,6 +184,8 @@ extension MainViewController: UICollectionViewDataSource {
             }
             cell.locationLabel.text = model.geoObject.locality.name
             cell.currentTemperatureLabel.text = "\(model.fact.temp) ℃"
+            let stringUrl = presenter.getUrlIcon()
+            cell.conditionImageView.loadImage(from: stringUrl)
 
             return cell
         case .ClimeDay:
@@ -211,6 +214,4 @@ extension MainViewController: MainViewProtocol {
     func showError(with error: String) {
         showErrorAlert(and: error)
     }
-
-
 }

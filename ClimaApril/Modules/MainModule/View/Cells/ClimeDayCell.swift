@@ -39,6 +39,7 @@ final class ClimeDayCell: UICollectionViewCell {
 
     private lazy var conditionImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(systemName: "questionmark.square.dashed")
         return imageView
     }()
