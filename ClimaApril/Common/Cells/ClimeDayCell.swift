@@ -14,11 +14,7 @@ private enum Constants {
     }
 
     enum Dimension {
-
-    }
-
-    enum Font {
-
+        static let standardOffset: CGFloat = 16
     }
 }
 
@@ -33,6 +29,7 @@ final class ClimeDayCell: UICollectionViewCell {
 
     lazy var weekdayLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         label.text = "Сегодня"
         return label
     }()
@@ -46,6 +43,7 @@ final class ClimeDayCell: UICollectionViewCell {
 
     lazy var rangeTempLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         label.text = "от 21 до 40"
         return label
     }()
@@ -70,19 +68,18 @@ final class ClimeDayCell: UICollectionViewCell {
     // MARK: - Private Methods
 
     private func setupUI() {
-        contentView.addSubviews(weekdayLabel, conditionImageView, rangeTempLabel) {[
-            weekdayLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            weekdayLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+        let hStack = UIStackView(arrangedSubviews: [weekdayLabel, conditionImageView, rangeTempLabel])
+        hStack.distribution = .fillEqually
 
-            conditionImageView.leadingAnchor.constraint(equalTo: weekdayLabel.trailingAnchor, constant: 8),
-            conditionImageView.widthAnchor.constraint(equalToConstant: 24),
-            conditionImageView.heightAnchor.constraint(equalToConstant: 24),
-            conditionImageView.centerYAnchor.constraint(equalTo: weekdayLabel.centerYAnchor),
-            conditionImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-
-            rangeTempLabel.leadingAnchor.constraint(equalTo: conditionImageView.trailingAnchor, constant: 8),
-            rangeTempLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8)
-
+        contentView.addSubviews(hStack) {[
+            hStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.Dimension.standardOffset),
+            hStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.Dimension.standardOffset),
+            hStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.Dimension.standardOffset),
+            hStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.Dimension.standardOffset)
         ]}
+
+        for i in 0..<contentView.constraints.count {
+           contentView.constraints[i].priority = .init(999)
+        }
     }
 }

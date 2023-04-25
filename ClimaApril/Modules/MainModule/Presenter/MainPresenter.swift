@@ -28,8 +28,18 @@ final class MainPresenter {
 
 extension MainPresenter: MainPresenterProtocol {
 
+    func getDayWeek(at index: Int) -> String {
+        guard let clime else { return ""}
+        if index == 0 {
+            return "Сегодня"
+        }
+        let dateTs = clime.forecasts[index].dateTs
+        let date = Date(timeIntervalSince1970: dateTs)
+        let dayWeek = date.toString("EEE")
+        return dayWeek
+    }
+
     func getUrlIcon(with icon: String) -> String {
-//        guard let stringIcon = clime?.fact.icon else { return ""}
         let stringUrl = "https://yastatic.net/weather/i/icons/funky/dark/" + icon + ".svg"
         return stringUrl
     }

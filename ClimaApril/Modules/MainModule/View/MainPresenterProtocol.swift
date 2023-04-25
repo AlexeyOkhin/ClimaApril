@@ -13,5 +13,5 @@ protocol MainPresenterProtocol {
 
     func loadClime()
     func getUrlIcon(with: String) -> String
-
+    func getDayWeek(at index: Int) -> String
 }

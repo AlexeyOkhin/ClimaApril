@@ -144,13 +144,13 @@ extension MainViewController: UICollectionViewDataSource {
             }
             let model = presenter.clime?.forecasts[indexPath.row]
             guard let model else { return cell }
-            cell.weekdayLabel.text = model.dayWeek
+            cell.weekdayLabel.text = presenter.getDayWeek(at: indexPath.row)
             let icon = model.parts.dayShort.icon
             let stringUrl = presenter.getUrlIcon(with: icon)
             cell.conditionImageView.loadImage(from: stringUrl)
             let minTemp = model.parts.dayShort.tempMin
             let temp = model.parts.dayShort.temp
-            cell.rangeTempLabel.text = "от \(minTemp)℃ до \(temp)℃"
+            cell.rangeTempLabel.text = "\(minTemp)℃...\(temp)℃"
             return cell
         }
     }

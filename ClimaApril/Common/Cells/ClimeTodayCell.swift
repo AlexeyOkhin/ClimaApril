@@ -87,7 +87,7 @@ final class ClimeTodayCell: UICollectionViewCell {
     // MARK: - Private Methods
 
     private func setupUI() {
-        
+
         contentView.addSubviews(locationLabel, currentTemperatureLabel, conditionImageView, conditionLabel) {[
             locationLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             locationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
