@@ -14,13 +14,31 @@ final class MainPresenter {
     var clime: ClimeModel? = nil
     weak var view: MainViewProtocol?
     let climeService: ClimeServicesProtocol
-    let locationService: ClimeLocationServiceProtocol
+    let locationManager: ClimeLocationManager
 
     // MARK: - Init
 
-    init(climeService: ClimeServicesProtocol, locationService: ClimeLocationServiceProtocol) {
+    init(climeService: ClimeServicesProtocol, locationManager: ClimeLocationManager) {
         self.climeService = climeService
-        self.locationService = locationService
+        self.locationManager = locationManager
+    }
+
+    private func loadClime(lat: Double, lon: Double) {
+        climeService.getClime(lat: lat, lon: lon) { [weak self] result in
+            switch result {
+
+            case .success(let climeModel):
+                DispatchQueue.main.async {
+                    self?.clime = climeModel
+                    self?.view?.reloadData()
+                    self?.view?.refreshData()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.view?.showError(with: error.localizedDescription)
+                }
+            }
+        }
     }
 }
 
@@ -44,21 +62,14 @@ extension MainPresenter: MainPresenterProtocol {
         return stringUrl
     }
 
-    func loadClime() {
-        climeService.getClime { [weak self] result in
-            switch result {
+    func loadLocationClime() {
+        locationManager.updateLocation()
+        locationManager.didUpdateLocations = { [weak self] location in
+            self?.loadClime(lat: location.latitude, lon: location.longitude)
+        }
 
-            case .success(let climeModel):
-                DispatchQueue.main.async {
-                    self?.clime = climeModel
-                    self?.view?.reloadData()
-                    self?.view?.refreshData()
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self?.view?.showError(with: error.localizedDescription)
-                }
-            }
+        locationManager.didFailWithError = { [weak self] error in
+            self?.loadClime(lat: 55.755864, lon: 37.617698)
         }
     }
 

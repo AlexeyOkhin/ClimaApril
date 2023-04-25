@@ -11,7 +11,7 @@ protocol MainPresenterProtocol {
 
     var clime: ClimeModel? { get }
 
-    func loadClime()
+    func loadLocationClime()
     func getUrlIcon(with: String) -> String
     func getDayWeek(at index: Int) -> String
 }

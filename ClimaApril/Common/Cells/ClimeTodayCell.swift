@@ -41,7 +41,7 @@ final class ClimeTodayCell: UICollectionViewCell {
         label.font =  .systemFont(ofSize: Constants.Dimension.sizeFontForLocation)
         label.textColor = Constants.Color.textLocation
         label.textAlignment = .center
-        label.text = "Orenburg"
+        label.text = "Москва"
         return label
     }()
 
@@ -89,7 +89,7 @@ final class ClimeTodayCell: UICollectionViewCell {
     private func setupUI() {
 
         contentView.addSubviews(locationLabel, currentTemperatureLabel, conditionImageView, conditionLabel) {[
-            locationLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            locationLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.Dimension.standardOffset * 2),
             locationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             locationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
 

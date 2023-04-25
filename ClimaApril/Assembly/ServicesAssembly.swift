@@ -14,15 +14,15 @@ class ServicesAssembly {
     }()
 
     private lazy var requestClime: URLRequestFactory = {
-        URLRequestFactory(latitude: 51.7727, longitude: 55.0988)
+        URLRequestFactory(latitude: 55.755864, longitude: 37.617698)
     }()
 
     func makeClimeService() -> ClimeServicesProtocol {
         ClimeServices(networkService: networkService, requestFactory: requestClime)
     }
 
-    func makeClimeLocationService() -> ClimeLocationServiceProtocol {
-        ClimeLocationService()
+    func makeClimeLocationManager() -> ClimeLocationManager {
+        ClimeLocationManager()
     }
 
 }

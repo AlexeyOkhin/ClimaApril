@@ -53,7 +53,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         settingRefreshControl()
-        presenter.loadClime()
+        presenter.loadLocationClime()
     }
 }
 
@@ -79,7 +79,7 @@ private extension MainViewController {
 
     @objc
     func didRefresh() {
-        presenter.loadClime()
+        presenter.loadLocationClime()
     }
 }
 
@@ -134,7 +134,7 @@ extension MainViewController: UICollectionViewDataSource {
             let icon = model.fact.icon
             let stringUrl = presenter.getUrlIcon(with: icon)
             cell.conditionImageView.loadImage(from: stringUrl)
-            cell.conditionLabel.text = model.fact.condition
+            cell.conditionLabel.text = model.fact.condition.rawValue
             return cell
         case .ClimeDay:
             guard

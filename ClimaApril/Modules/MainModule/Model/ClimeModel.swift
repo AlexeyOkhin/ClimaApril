@@ -25,7 +25,21 @@ struct LocalityModel: Decodable {
 struct FactModel: Decodable {
     let temp: Int
     let icon: String
-    let condition: String
+    let condition: Condition
+
+    enum CodingKeys: CodingKey {
+        case temp
+        case icon
+        case condition
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.temp = try container.decode(Int.self, forKey: .temp)
+        self.icon = try container.decode(String.self, forKey: .icon)
+        let condition = try container.decode(String.self, forKey: .condition)
+        self.condition = .init(rawValue: condition) ?? .lightRain
+    }
 }
 
 struct ForecastsModel: Decodable {
@@ -42,6 +56,20 @@ struct DayModel: Decodable {
     let temp: Int
     let tempMin: Int
     let icon: String
+}
+
+enum Condition: String {
+case lightRain = "Cлабый дождь"
+
+    init?(rawValue: String) {
+        switch rawValue {
+        case "light-rain": self = .lightRain
+
+        default:
+            return nil
+        }
+    }
+
 }
 
 /*

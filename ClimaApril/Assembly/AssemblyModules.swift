@@ -21,7 +21,9 @@ class AssemblyModules: AssemblyModulesProtocol {
     }
 
     func makeMainModule() -> UIViewController {
-        let presenter = MainPresenter(climeService: servicesAssembly.makeClimeService(), locationService: servicesAssembly.makeClimeLocationService())
+        let presenter = MainPresenter(climeService: servicesAssembly.makeClimeService(),
+                                      locationManager: servicesAssembly.makeClimeLocationManager())
+        
         let view = MainViewController(presenter: presenter)
         presenter.view = view
         return view
