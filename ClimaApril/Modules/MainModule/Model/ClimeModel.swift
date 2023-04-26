@@ -38,7 +38,7 @@ struct FactModel: Decodable {
         self.temp = try container.decode(Int.self, forKey: .temp)
         self.icon = try container.decode(String.self, forKey: .icon)
         let condition = try container.decode(String.self, forKey: .condition)
-        self.condition = .init(rawValue: condition) ?? .lightRain
+        self.condition = .init(rawValue: condition) ?? .unknown
     }
 }
 
@@ -59,38 +59,52 @@ struct DayModel: Decodable {
 }
 
 enum Condition: String {
-case lightRain = "Cлабый дождь"
+
+    case lightRain = "Небольшой дождь"
+    case clear = " Ясно"
+    case partlyCloudy = "Малооблачно"
+    case cloudy = "Облачно с прояснениями"
+    case overcast = "Пасмурно"
+    case drizzle = "Морось"
+    case rain = "Дождь"
+    case moderateRain = "Умереный дождь"
+    case heavyRain = "Сильный дождь"
+    case continuousHeavyRain = "Длительный сильный дождь"
+    case showers = "Ливень"
+    case wetSnow = "Дождь со снегом"
+    case lightSnow = "Небольшой снег"
+    case snow = "Снег"
+    case snowShowers = "Снегопад"
+    case hail = "Град"
+    case thunderstorm = "Гроза"
+    case thunderstormWithRain = "Дождь с грозой"
+    case thunderstormWithHail = "Гроза с градом"
+    case unknown = "Неизвестное явление"
 
     init?(rawValue: String) {
         switch rawValue {
         case "light-rain": self = .lightRain
-
+        case "clear": self = .clear
+        case "partly-cloudy": self = .partlyCloudy
+        case "cloudy": self = .cloudy
+        case "overcast": self = .overcast
+        case "drizzle": self = .drizzle
+        case "rain": self = .rain
+        case "moderate-rain": self = .moderateRain
+        case "heavy-rain": self = .heavyRain
+        case "continuous-heavy-rain": self = .continuousHeavyRain
+        case "showers": self = .showers
+        case "wet-snow": self = .wetSnow
+        case "light-snow": self = .lightSnow
+        case "snow": self = .snow
+        case "snow-showers": self = .snowShowers
+        case "hail": self = .hail
+        case "thunderstorm": self = .thunderstorm
+        case "thunderstorm-with-rain": self = .thunderstormWithRain
+        case "thunderstorm-with-hail": self = .thunderstormWithHail
+        case "unknown": self = .unknown
         default:
             return nil
         }
     }
-
 }
-
-/*
- Код расшифровки погодного описания. Возможные значения:
- clear — ясно.
- partly-cloudy — малооблачно.
- cloudy — облачно с прояснениями.
- overcast — пасмурно.
- drizzle — морось.
- light-rain — небольшой дождь.
- rain — дождь.
- moderate-rain — умеренно сильный дождь.
- heavy-rain — сильный дождь.
- continuous-heavy-rain — длительный сильный дождь.
- showers — ливень.
- wet-snow — дождь со снегом.
- light-snow — небольшой снег.
- snow — снег.
- snow-showers — снегопад.
- hail — град.
- thunderstorm — гроза.
- thunderstorm-with-rain — дождь с грозой.
- thunderstorm-with-hail — гроза с градом.
- */
