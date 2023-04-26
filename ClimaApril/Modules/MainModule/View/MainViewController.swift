@@ -36,6 +36,7 @@ final class MainViewController: UIViewController {
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: "SectionWeek", withReuseIdentifier: SectionHeader.reuseIdentifier)
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: "SectionHour", withReuseIdentifier: SectionHeader.reuseIdentifier)
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         return collectionView
     }()
@@ -67,7 +68,7 @@ private extension MainViewController {
 
     func setupUI() {
 
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "bacgroundClime")
         view.addSubviews(climeCollectionView) {[
             climeCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             climeCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
