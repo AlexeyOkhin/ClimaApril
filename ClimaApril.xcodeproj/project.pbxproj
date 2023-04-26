@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C2A806C29F80E2A00860486 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A806B29F80E2A00860486 /* Date + Extension.swift */; };
 		0C2A806E29F817C100860486 /* ClimeCompositionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A806D29F817C100860486 /* ClimeCompositionLayout.swift */; };
+		0C2A807529F8FF1000860486 /* ClimeHourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A807429F8FF1000860486 /* ClimeHourCell.swift */; };
 		0CF4C5E529F6B89F005B9178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C5E429F6B89F005B9178 /* AppDelegate.swift */; };
 		0CF4C5E729F6B89F005B9178 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C5E629F6B89F005B9178 /* SceneDelegate.swift */; };
 		0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C5E829F6B89F005B9178 /* MainViewController.swift */; };
@@ -39,6 +40,7 @@
 		09B903D30FE1CADF59277F45 /* Pods_ClimaApril.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClimaApril.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C2A806B29F80E2A00860486 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
 		0C2A806D29F817C100860486 /* ClimeCompositionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeCompositionLayout.swift; sourceTree = "<group>"; };
+		0C2A807429F8FF1000860486 /* ClimeHourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeHourCell.swift; sourceTree = "<group>"; };
 		0CF4C5E129F6B89F005B9178 /* ClimaApril.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimaApril.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CF4C5E429F6B89F005B9178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CF4C5E629F6B89F005B9178 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				0CF4C60B29F6CEAD005B9178 /* ClimeTodayCell.swift */,
 				0CF4C60929F6CA2C005B9178 /* ClimeDayCell.swift */,
+				0C2A807429F8FF1000860486 /* ClimeHourCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				0CF4C62229F7CB9B005B9178 /* MainViewProtocol.swift in Sources */,
 				0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */,
 				0CF4C61529F79EC7005B9178 /* ClimeServices.swift in Sources */,
+				0C2A807529F8FF1000860486 /* ClimeHourCell.swift in Sources */,
 				0CF4C60C29F6CEAD005B9178 /* ClimeTodayCell.swift in Sources */,
 				0CF4C60529F6BEB5005B9178 /* UIView + Extension.swift in Sources */,
 				0CF4C5E529F6B89F005B9178 /* AppDelegate.swift in Sources */,

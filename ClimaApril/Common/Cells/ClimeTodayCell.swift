@@ -82,6 +82,10 @@ final class ClimeTodayCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
+        locationLabel.text = nil
+        currentTemperatureLabel.text = nil
+        conditionLabel.text = nil
+        conditionImageView.image = nil
     }
 
     // MARK: - Private Methods

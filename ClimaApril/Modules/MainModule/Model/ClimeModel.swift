@@ -46,10 +46,18 @@ struct ForecastsModel: Decodable {
     let dateTs: Double
     let week: Int
     let parts: PartModel
+    let hours: [HourClimeModel]
 }
 
 struct PartModel: Decodable {
     let dayShort: DayModel
+}
+
+struct HourClimeModel: Decodable {
+    let hour: String
+    let hourTs: Int
+    let temp: Int
+    let icon: String
 }
 
 struct DayModel: Decodable {
