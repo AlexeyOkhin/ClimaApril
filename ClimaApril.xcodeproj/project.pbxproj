@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C2A806C29F80E2A00860486 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A806B29F80E2A00860486 /* Date + Extension.swift */; };
+		0C2A806E29F817C100860486 /* ClimeCompositionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A806D29F817C100860486 /* ClimeCompositionLayout.swift */; };
+		0C2A807529F8FF1000860486 /* ClimeHourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A807429F8FF1000860486 /* ClimeHourCell.swift */; };
+		0C2A807729F9054500860486 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A807629F9054500860486 /* SectionHeader.swift */; };
 		0CF4C5E529F6B89F005B9178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C5E429F6B89F005B9178 /* AppDelegate.swift */; };
 		0CF4C5E729F6B89F005B9178 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C5E629F6B89F005B9178 /* SceneDelegate.swift */; };
 		0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C5E829F6B89F005B9178 /* MainViewController.swift */; };
@@ -15,9 +19,30 @@
 		0CF4C5FF29F6BC21005B9178 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0CF4C5FE29F6BC21005B9178 /* .gitignore */; };
 		0CF4C60129F6BEA3005B9178 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60029F6BEA3005B9178 /* UIViewController + Extension.swift */; };
 		0CF4C60529F6BEB5005B9178 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60429F6BEB5005B9178 /* UIView + Extension.swift */; };
+		0CF4C60A29F6CA2C005B9178 /* ClimeDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60929F6CA2C005B9178 /* ClimeDayCell.swift */; };
+		0CF4C60C29F6CEAD005B9178 /* ClimeTodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60B29F6CEAD005B9178 /* ClimeTodayCell.swift */; };
+		0CF4C60F29F6D8C2005B9178 /* ClimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C60E29F6D8C2005B9178 /* ClimeModel.swift */; };
+		0CF4C61129F79DD7005B9178 /* ClimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61029F79DD7005B9178 /* ClimeError.swift */; };
+		0CF4C61329F79E20005B9178 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61229F79E20005B9178 /* NetworkService.swift */; };
+		0CF4C61529F79EC7005B9178 /* ClimeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61429F79EC7005B9178 /* ClimeServices.swift */; };
+		0CF4C61729F79F83005B9178 /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */; };
+		0CF4C61929F7A993005B9178 /* ClimeLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61829F7A993005B9178 /* ClimeLocationManager.swift */; };
+		0CF4C61B29F7C6AA005B9178 /* AssemblyModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61A29F7C6AA005B9178 /* AssemblyModules.swift */; };
+		0CF4C61E29F7C960005B9178 /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61D29F7C960005B9178 /* ServicesAssembly.swift */; };
+		0CF4C62229F7CB9B005B9178 /* MainViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C62129F7CB9B005B9178 /* MainViewProtocol.swift */; };
+		0CF4C62429F7CBB1005B9178 /* MainPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C62329F7CBB1005B9178 /* MainPresenterProtocol.swift */; };
+		0CF4C62629F7CBC5005B9178 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C62529F7CBC5005B9178 /* MainPresenter.swift */; };
+		0CF4C62829F7E029005B9178 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C62729F7E029005B9178 /* ImageLoader.swift */; };
+		0CF4C62A29F7E050005B9178 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C62929F7E050005B9178 /* UIImageView + Extension.swift */; };
+		22C9D16159BEC0D4B3A313D5 /* Pods_ClimaApril.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B903D30FE1CADF59277F45 /* Pods_ClimaApril.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09B903D30FE1CADF59277F45 /* Pods_ClimaApril.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClimaApril.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2A806B29F80E2A00860486 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		0C2A806D29F817C100860486 /* ClimeCompositionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeCompositionLayout.swift; sourceTree = "<group>"; };
+		0C2A807429F8FF1000860486 /* ClimeHourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeHourCell.swift; sourceTree = "<group>"; };
+		0C2A807629F9054500860486 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		0CF4C5E129F6B89F005B9178 /* ClimaApril.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimaApril.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CF4C5E429F6B89F005B9178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CF4C5E629F6B89F005B9178 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +53,23 @@
 		0CF4C5FE29F6BC21005B9178 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0CF4C60029F6BEA3005B9178 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		0CF4C60429F6BEB5005B9178 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		0CF4C60929F6CA2C005B9178 /* ClimeDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeDayCell.swift; sourceTree = "<group>"; };
+		0CF4C60B29F6CEAD005B9178 /* ClimeTodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeTodayCell.swift; sourceTree = "<group>"; };
+		0CF4C60E29F6D8C2005B9178 /* ClimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeModel.swift; sourceTree = "<group>"; };
+		0CF4C61029F79DD7005B9178 /* ClimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeError.swift; sourceTree = "<group>"; };
+		0CF4C61229F79E20005B9178 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0CF4C61429F79EC7005B9178 /* ClimeServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeServices.swift; sourceTree = "<group>"; };
+		0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
+		0CF4C61829F7A993005B9178 /* ClimeLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeLocationManager.swift; sourceTree = "<group>"; };
+		0CF4C61A29F7C6AA005B9178 /* AssemblyModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModules.swift; sourceTree = "<group>"; };
+		0CF4C61D29F7C960005B9178 /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
+		0CF4C62129F7CB9B005B9178 /* MainViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewProtocol.swift; sourceTree = "<group>"; };
+		0CF4C62329F7CBB1005B9178 /* MainPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterProtocol.swift; sourceTree = "<group>"; };
+		0CF4C62529F7CBC5005B9178 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		0CF4C62729F7E029005B9178 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		0CF4C62929F7E050005B9178 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
+		551B6226F25EC30ED56BDFA9 /* Pods-ClimaApril.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClimaApril.debug.xcconfig"; path = "Target Support Files/Pods-ClimaApril/Pods-ClimaApril.debug.xcconfig"; sourceTree = "<group>"; };
+		FA3D6F5AFA789BDAD3AE4B0A /* Pods-ClimaApril.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClimaApril.release.xcconfig"; path = "Target Support Files/Pods-ClimaApril/Pods-ClimaApril.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,18 +77,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C9D16159BEC0D4B3A313D5 /* Pods_ClimaApril.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C2A806F29F817F200860486 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C60729F6C9CF005B9178 /* Cells */,
+				0C2A806D29F817C100860486 /* ClimeCompositionLayout.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0C2A807329F8F25500860486 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C61829F7A993005B9178 /* ClimeLocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		0CF4C5D829F6B89F005B9178 = {
 			isa = PBXGroup;
 			children = (
 				0CF4C5FE29F6BC21005B9178 /* .gitignore */,
 				0CF4C5E329F6B89F005B9178 /* ClimaApril */,
 				0CF4C5E229F6B89F005B9178 /* Products */,
+				B97E7276B7788F23167B4D59 /* Pods */,
+				597C7EE4F773FC05B38B6083 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,8 +123,11 @@
 		0CF4C5E329F6B89F005B9178 /* ClimaApril */ = {
 			isa = PBXGroup;
 			children = (
+				0C2A806F29F817F200860486 /* Common */,
+				0CF4C61C29F7C70F005B9178 /* Assembly */,
 				0CF4C5FD29F6B9AD005B9178 /* Extensions */,
 				0CF4C5FC29F6B9A2005B9178 /* Services */,
+				0C2A807329F8F25500860486 /* Managers */,
 				0CF4C5FA29F6B97F005B9178 /* Modules */,
 				0CF4C5F929F6B96C005B9178 /* SupportingFiles */,
 				0CF4C5F829F6B95F005B9178 /* Application */,
@@ -100,7 +165,9 @@
 		0CF4C5FB29F6B991005B9178 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
-				0CF4C5E829F6B89F005B9178 /* MainViewController.swift */,
+				0CF4C61F29F7CB5C005B9178 /* Presenter */,
+				0CF4C60D29F6D8AC005B9178 /* Model */,
+				0CF4C60629F6C9C9005B9178 /* View */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -108,6 +175,11 @@
 		0CF4C5FC29F6B9A2005B9178 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0CF4C61029F79DD7005B9178 /* ClimeError.swift */,
+				0CF4C61229F79E20005B9178 /* NetworkService.swift */,
+				0CF4C61429F79EC7005B9178 /* ClimeServices.swift */,
+				0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */,
+				0CF4C62729F7E029005B9178 /* ImageLoader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -117,8 +189,73 @@
 			children = (
 				0CF4C60029F6BEA3005B9178 /* UIViewController + Extension.swift */,
 				0CF4C60429F6BEB5005B9178 /* UIView + Extension.swift */,
+				0CF4C62929F7E050005B9178 /* UIImageView + Extension.swift */,
+				0C2A806B29F80E2A00860486 /* Date + Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0CF4C60629F6C9C9005B9178 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C5E829F6B89F005B9178 /* MainViewController.swift */,
+				0CF4C62129F7CB9B005B9178 /* MainViewProtocol.swift */,
+				0CF4C62329F7CBB1005B9178 /* MainPresenterProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0CF4C60729F6C9CF005B9178 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C60B29F6CEAD005B9178 /* ClimeTodayCell.swift */,
+				0CF4C60929F6CA2C005B9178 /* ClimeDayCell.swift */,
+				0C2A807429F8FF1000860486 /* ClimeHourCell.swift */,
+				0C2A807629F9054500860486 /* SectionHeader.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0CF4C60D29F6D8AC005B9178 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C60E29F6D8C2005B9178 /* ClimeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0CF4C61C29F7C70F005B9178 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C61A29F7C6AA005B9178 /* AssemblyModules.swift */,
+				0CF4C61D29F7C960005B9178 /* ServicesAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		0CF4C61F29F7CB5C005B9178 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C62529F7CBC5005B9178 /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		597C7EE4F773FC05B38B6083 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09B903D30FE1CADF59277F45 /* Pods_ClimaApril.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B97E7276B7788F23167B4D59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				551B6226F25EC30ED56BDFA9 /* Pods-ClimaApril.debug.xcconfig */,
+				FA3D6F5AFA789BDAD3AE4B0A /* Pods-ClimaApril.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CF4C5F529F6B8A7005B9178 /* Build configuration list for PBXNativeTarget "ClimaApril" */;
 			buildPhases = (
+				DBA6C631BCA2245A53742B38 /* [CP] Check Pods Manifest.lock */,
 				0CF4C5DD29F6B89F005B9178 /* Sources */,
 				0CF4C5DE29F6B89F005B9178 /* Frameworks */,
 				0CF4C5DF29F6B89F005B9178 /* Resources */,
+				358E26C2213F274F3B502945 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,16 +326,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		358E26C2213F274F3B502945 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ClimaApril/Pods-ClimaApril-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ClimaApril/Pods-ClimaApril-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ClimaApril/Pods-ClimaApril-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBA6C631BCA2245A53742B38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ClimaApril-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0CF4C5DD29F6B89F005B9178 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF4C61329F79E20005B9178 /* NetworkService.swift in Sources */,
+				0CF4C61E29F7C960005B9178 /* ServicesAssembly.swift in Sources */,
+				0CF4C61B29F7C6AA005B9178 /* AssemblyModules.swift in Sources */,
+				0C2A806E29F817C100860486 /* ClimeCompositionLayout.swift in Sources */,
+				0CF4C62229F7CB9B005B9178 /* MainViewProtocol.swift in Sources */,
 				0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */,
+				0CF4C61529F79EC7005B9178 /* ClimeServices.swift in Sources */,
+				0C2A807529F8FF1000860486 /* ClimeHourCell.swift in Sources */,
+				0CF4C60C29F6CEAD005B9178 /* ClimeTodayCell.swift in Sources */,
 				0CF4C60529F6BEB5005B9178 /* UIView + Extension.swift in Sources */,
 				0CF4C5E529F6B89F005B9178 /* AppDelegate.swift in Sources */,
+				0CF4C62829F7E029005B9178 /* ImageLoader.swift in Sources */,
+				0CF4C60A29F6CA2C005B9178 /* ClimeDayCell.swift in Sources */,
+				0CF4C61129F79DD7005B9178 /* ClimeError.swift in Sources */,
+				0CF4C62A29F7E050005B9178 /* UIImageView + Extension.swift in Sources */,
 				0CF4C60129F6BEA3005B9178 /* UIViewController + Extension.swift in Sources */,
+				0CF4C61929F7A993005B9178 /* ClimeLocationManager.swift in Sources */,
+				0CF4C62629F7CBC5005B9178 /* MainPresenter.swift in Sources */,
+				0CF4C60F29F6D8C2005B9178 /* ClimeModel.swift in Sources */,
+				0CF4C62429F7CBB1005B9178 /* MainPresenterProtocol.swift in Sources */,
+				0C2A807729F9054500860486 /* SectionHeader.swift in Sources */,
+				0CF4C61729F79F83005B9178 /* URLRequestFactory.swift in Sources */,
 				0CF4C5E729F6B89F005B9178 /* SceneDelegate.swift in Sources */,
+				0C2A806C29F80E2A00860486 /* Date + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +530,7 @@
 		};
 		0CF4C5F629F6B8A7005B9178 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 551B6226F25EC30ED56BDFA9 /* Pods-ClimaApril.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -360,6 +561,7 @@
 		};
 		0CF4C5F729F6B8A7005B9178 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA3D6F5AFA789BDAD3AE4B0A /* Pods-ClimaApril.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
