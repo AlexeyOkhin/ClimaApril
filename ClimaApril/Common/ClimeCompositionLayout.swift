@@ -51,6 +51,11 @@ final class ClimeCompositionLayout {
 
         let section = NSCollectionLayoutSection(group: group)
 
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(1.0))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: "SectionWeek", alignment: .top)
+
+        section.boundarySupplementaryItems = [header]
+
         return section
     }
 
@@ -67,6 +72,11 @@ final class ClimeCompositionLayout {
 
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
+
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(1.0))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: "SectionHour", alignment: .top)
+
+        section.boundarySupplementaryItems = [header]
 
         return section
     }

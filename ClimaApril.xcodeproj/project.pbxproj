@@ -10,6 +10,7 @@
 		0C2A806C29F80E2A00860486 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A806B29F80E2A00860486 /* Date + Extension.swift */; };
 		0C2A806E29F817C100860486 /* ClimeCompositionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A806D29F817C100860486 /* ClimeCompositionLayout.swift */; };
 		0C2A807529F8FF1000860486 /* ClimeHourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A807429F8FF1000860486 /* ClimeHourCell.swift */; };
+		0C2A807729F9054500860486 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A807629F9054500860486 /* SectionHeader.swift */; };
 		0CF4C5E529F6B89F005B9178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C5E429F6B89F005B9178 /* AppDelegate.swift */; };
 		0CF4C5E729F6B89F005B9178 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C5E629F6B89F005B9178 /* SceneDelegate.swift */; };
 		0CF4C5E929F6B89F005B9178 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C5E829F6B89F005B9178 /* MainViewController.swift */; };
@@ -41,6 +42,7 @@
 		0C2A806B29F80E2A00860486 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
 		0C2A806D29F817C100860486 /* ClimeCompositionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeCompositionLayout.swift; sourceTree = "<group>"; };
 		0C2A807429F8FF1000860486 /* ClimeHourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeHourCell.swift; sourceTree = "<group>"; };
+		0C2A807629F9054500860486 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		0CF4C5E129F6B89F005B9178 /* ClimaApril.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimaApril.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CF4C5E429F6B89F005B9178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CF4C5E629F6B89F005B9178 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				0CF4C60B29F6CEAD005B9178 /* ClimeTodayCell.swift */,
 				0CF4C60929F6CA2C005B9178 /* ClimeDayCell.swift */,
 				0C2A807429F8FF1000860486 /* ClimeHourCell.swift */,
+				0C2A807629F9054500860486 /* SectionHeader.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				0CF4C62629F7CBC5005B9178 /* MainPresenter.swift in Sources */,
 				0CF4C60F29F6D8C2005B9178 /* ClimeModel.swift in Sources */,
 				0CF4C62429F7CBB1005B9178 /* MainPresenterProtocol.swift in Sources */,
+				0C2A807729F9054500860486 /* SectionHeader.swift in Sources */,
 				0CF4C61729F79F83005B9178 /* URLRequestFactory.swift in Sources */,
 				0CF4C5E729F6B89F005B9178 /* SceneDelegate.swift in Sources */,
 				0C2A806C29F80E2A00860486 /* Date + Extension.swift in Sources */,
