@@ -53,7 +53,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         settingRefreshControl()
-        presenter.loadLocationClime()
+        presenter.setLocationClime()
     }
 }
 
@@ -79,7 +79,7 @@ private extension MainViewController {
 
     @objc
     func didRefresh() {
-        presenter.loadLocationClime()
+        presenter.setLocationClime()
     }
 }
 

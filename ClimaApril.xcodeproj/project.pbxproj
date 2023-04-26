@@ -89,6 +89,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		0C2A807329F8F25500860486 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C61829F7A993005B9178 /* ClimeLocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		0CF4C5D829F6B89F005B9178 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +123,7 @@
 				0CF4C61C29F7C70F005B9178 /* Assembly */,
 				0CF4C5FD29F6B9AD005B9178 /* Extensions */,
 				0CF4C5FC29F6B9A2005B9178 /* Services */,
+				0C2A807329F8F25500860486 /* Managers */,
 				0CF4C5FA29F6B97F005B9178 /* Modules */,
 				0CF4C5F929F6B96C005B9178 /* SupportingFiles */,
 				0CF4C5F829F6B95F005B9178 /* Application */,
@@ -166,7 +175,6 @@
 				0CF4C61229F79E20005B9178 /* NetworkService.swift */,
 				0CF4C61429F79EC7005B9178 /* ClimeServices.swift */,
 				0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */,
-				0CF4C61829F7A993005B9178 /* ClimeLocationManager.swift */,
 				0CF4C62729F7E029005B9178 /* ImageLoader.swift */,
 			);
 			path = Services;

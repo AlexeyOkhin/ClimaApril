@@ -23,6 +23,8 @@ final class MainPresenter {
         self.locationManager = locationManager
     }
 
+// MARK: - Private Methods
+
     private func loadClime(lat: Double, lon: Double) {
         climeService.getClime(lat: lat, lon: lon) { [weak self] result in
             switch result {
@@ -62,7 +64,7 @@ extension MainPresenter: MainPresenterProtocol {
         return stringUrl
     }
 
-    func loadLocationClime() {
+    func setLocationClime() {
         locationManager.updateLocation()
         locationManager.didUpdateLocations = { [weak self] location in
             self?.loadClime(lat: location.latitude, lon: location.longitude)
@@ -72,5 +74,4 @@ extension MainPresenter: MainPresenterProtocol {
             self?.loadClime(lat: 55.755864, lon: 37.617698)
         }
     }
-
 }
