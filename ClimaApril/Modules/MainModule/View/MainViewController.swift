@@ -16,6 +16,7 @@ private enum Constants {
 
 private enum Section: Int, CaseIterable {
     case ClimeToday
+    case ClimeHour
     case ClimeDay
 }
 
@@ -31,6 +32,7 @@ final class MainViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: compositionLayout.configureCompositionalLayout())
         collectionView.register(ClimeTodayCell.self, forCellWithReuseIdentifier: ClimeTodayCell.reuseIdentifier)
         collectionView.register(ClimeDayCell.self, forCellWithReuseIdentifier: ClimeDayCell.reuseIdentifier)
+        collectionView.register(ClimeHourCell.self, forCellWithReuseIdentifier: ClimeHourCell.reuseIdentifier)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.dataSource = self
         return collectionView
@@ -92,16 +94,21 @@ extension MainViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard
-            let section = Section(rawValue: section)
-        else {
-            return 0
-        }
+        guard let section = Section(rawValue: section) else { return 0 }
 
         switch section {
 
         case .ClimeToday:
             return 1
+
+        case .ClimeHour:
+            guard
+                let hoursCount = presenter.clime?.forecasts[0].hours.count
+            else {
+                return 0
+            }
+            return hoursCount
+
         case .ClimeDay:
             guard
                 let forecastsCount = presenter.clime?.forecasts.count
@@ -120,14 +127,14 @@ extension MainViewController: UICollectionViewDataSource {
         }
 
         switch section {
-
+            
         case .ClimeToday:
             guard
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ClimeTodayCell.reuseIdentifier, for: indexPath) as? ClimeTodayCell
             else {
                 return UICollectionViewCell()
             }
-
+            
             let model = presenter.clime
             guard let model else { return cell }
             cell.locationLabel.text = model.geoObject.locality.name
@@ -137,6 +144,24 @@ extension MainViewController: UICollectionViewDataSource {
             cell.conditionImageView.loadImage(from: stringUrl)
             cell.conditionLabel.text = model.fact.condition.rawValue
             return cell
+            
+        case .ClimeHour:
+            guard
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ClimeHourCell.reuseIdentifier, for: indexPath) as? ClimeHourCell
+            else {
+                return UICollectionViewCell()
+            }
+            let model = presenter.clime?.forecasts[0].hours[indexPath.row]
+            guard let model else { return cell }
+            let icon = model.icon
+            let stringUrl = presenter.getUrlIcon(with: icon)
+            cell.conditionImageView.loadImage(from: stringUrl)
+
+            cell.hourLabel.text = model.hour
+            cell.tempLabel.text = String(model.temp)
+
+            return cell
+            
         case .ClimeDay:
             guard
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ClimeDayCell.reuseIdentifier, for: indexPath) as? ClimeDayCell

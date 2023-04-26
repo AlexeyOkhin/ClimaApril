@@ -1,8 +1,8 @@
 //
-//  ClimaDayCell.swift
+//  ClimeHourCell.swift
 //  ClimaApril
 //
-//  Created by Djinsolobzik on 24.04.2023.
+//  Created by Djinsolobzik on 26.04.2023.
 //
 
 import UIKit
@@ -14,18 +14,18 @@ private enum Constants {
     }
 }
 
-final class ClimeDayCell: UICollectionViewCell {
+final class ClimeHourCell: UICollectionViewCell {
 
     // MARK: - Static Properties
 
-    static let reuseIdentifier = "\(ClimeDayCell.self)"
+    static let reuseIdentifier = "\(ClimeHourCell.self)"
 
     // MARK: - Private properties
 
-    lazy var weekdayLabel: UILabel = {
+    lazy var hourLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "Сегодня"
+        label.text = "0"
         return label
     }()
 
@@ -36,10 +36,10 @@ final class ClimeDayCell: UICollectionViewCell {
         return imageView
     }()
 
-    lazy var rangeTempLabel: UILabel = {
+    lazy var tempLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "от 21 до 40"
+        label.text = "0"
         return label
     }()
 
@@ -57,23 +57,24 @@ final class ClimeDayCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        weekdayLabel.text = nil
+        hourLabel.text = nil
         conditionImageView.image = nil
-        rangeTempLabel.text = nil
+        tempLabel.text = nil
     }
 
 
     // MARK: - Private Methods
 
     private func setupUI() {
-        let hStack = UIStackView(arrangedSubviews: [weekdayLabel, conditionImageView, rangeTempLabel])
-        hStack.distribution = .fillEqually
+        let vStack = UIStackView(arrangedSubviews: [hourLabel, conditionImageView, tempLabel])
+        vStack.distribution = .fillEqually
+        vStack.axis = .vertical
 
-        contentView.addSubviews(hStack) {[
-            hStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.Dimension.standardOffset),
-            hStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.Dimension.standardOffset),
-            hStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.Dimension.standardOffset),
-            hStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.Dimension.standardOffset)
+        contentView.addSubviews(vStack) {[
+            vStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.Dimension.standardOffset),
+            vStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.Dimension.standardOffset),
+            vStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.Dimension.standardOffset),
+            vStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.Dimension.standardOffset)
         ]}
 
         for i in 0..<contentView.constraints.count {
@@ -81,3 +82,4 @@ final class ClimeDayCell: UICollectionViewCell {
         }
     }
 }
+

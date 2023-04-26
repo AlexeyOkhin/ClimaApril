@@ -13,7 +13,8 @@ final class ClimeCompositionLayout {
         let layout = UICollectionViewCompositionalLayout(sectionProvider: { [weak self] sectionId, environment in
             switch sectionId {
             case 0: return self?.createSectionLayoutDayClime(environment: environment)
-            case 1: return self?.createSectionLayoutForWeekClime(environment: environment)
+            case 1: return self?.createSectionLayoutForHourClime(environment: environment)
+            case 2: return self?.createSectionLayoutForWeekClime(environment: environment)
             default: return self?.createSectionLayoutForWeekClime(environment: environment)
             }
         })
@@ -49,6 +50,23 @@ final class ClimeCompositionLayout {
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
+
+        return section
+    }
+
+    private func createSectionLayoutForHourClime(environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.2),
+            heightDimension: .absolute(100))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(100))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
 
         return section
     }
