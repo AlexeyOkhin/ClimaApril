@@ -33,6 +33,8 @@ final class MainViewController: UIViewController {
         collectionView.register(ClimeTodayCell.self, forCellWithReuseIdentifier: ClimeTodayCell.reuseIdentifier)
         collectionView.register(ClimeDayCell.self, forCellWithReuseIdentifier: ClimeDayCell.reuseIdentifier)
         collectionView.register(ClimeHourCell.self, forCellWithReuseIdentifier: ClimeHourCell.reuseIdentifier)
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: "SectionWeek", withReuseIdentifier: SectionHeader.reuseIdentifier)
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: "SectionHour", withReuseIdentifier: SectionHeader.reuseIdentifier)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.dataSource = self
         return collectionView
@@ -75,7 +77,7 @@ private extension MainViewController {
     }
 
     func settingRefreshControl() {
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.attributedTitle = NSAttributedString(string: "Обновляю...")
         refreshControl.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
         climeCollectionView.refreshControl = refreshControl
     }
@@ -89,6 +91,7 @@ private extension MainViewController {
 // MARK: - Extension UITableViewDataSource
 
 extension MainViewController: UICollectionViewDataSource {
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         Section.allCases.count
     }
@@ -179,6 +182,31 @@ extension MainViewController: UICollectionViewDataSource {
             cell.rangeTempLabel.text = "\(minTemp)℃...\(temp)℃"
             return cell
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == "SectionHour" {
+            guard
+                let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseIdentifier, for: indexPath) as? SectionHeader
+            else {
+                return UICollectionReusableView()
+            }
+             sectionHeader.label.text = "Прогноз на сутки"
+             return sectionHeader
+        } 
+
+        if kind == "SectionWeek" {
+            guard
+                let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseIdentifier, for: indexPath) as? SectionHeader
+            else {
+                return UICollectionReusableView()
+            }
+             sectionHeader.label.text = "Прогноз на неделю"
+             return sectionHeader
+        }
+
+        return UICollectionReusableView()
+
     }
 }
 
