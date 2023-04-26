@@ -45,9 +45,6 @@ private extension URLRequestFactory {
         guard let url = urlComponents.url else {
             return nil
         }
-
-        print(url)
-
         return url
     }
 }

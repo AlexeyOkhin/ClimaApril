@@ -54,8 +54,6 @@ final class ClimeLocationManager: NSObject, CLLocationManagerDelegate {
         if checkLocationAuthorizationStatus() {
             guard let locationValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
             didUpdateLocations?(locationValue)
-        } else {
-            print("не разрешил")
         }
     }
 }
