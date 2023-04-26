@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ClimeServicesProtocol {
-    func getClime(completion: @escaping (Result<ClimeModel, Error>) -> Void)
+    func getClime(lat: Double, lon: Double, completion: @escaping (Result<ClimeModel, Error>) -> Void)
 }
 
 class ClimeServices: ClimeServicesProtocol {
@@ -22,9 +22,9 @@ class ClimeServices: ClimeServicesProtocol {
         self.requestFactory = requestFactory
     }
 
-    func getClime(completion: @escaping (Result<ClimeModel, Error>) -> Void) {
+    func getClime(lat: Double, lon: Double, completion: @escaping (Result<ClimeModel, Error>) -> Void) {
         do {
-            let request = try requestFactory.getClimeRequest()
+            let request = try requestFactory.getClimeRequest(lat: lat, lon: lon)
             networkService.sendRequest(request, completion: completion)
         } catch {
             completion(.failure(error))

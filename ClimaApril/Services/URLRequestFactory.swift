@@ -8,7 +8,7 @@
 import Foundation
 
 protocol URLRequestFactoryProtocol {
-    func getClimeRequest() throws -> URLRequest
+    func getClimeRequest(lat: Double, lon: Double) throws -> URLRequest
 
 }
 
@@ -23,8 +23,8 @@ final class URLRequestFactory: URLRequestFactoryProtocol {
         self.longitude = longitude
     }
 
-    func getClimeRequest() throws -> URLRequest {
-        guard let url = url(with: "/v2/forecast") else {
+    func getClimeRequest(lat: Double, lon: Double) throws -> URLRequest {
+        guard let url = url(with: "/v2/forecast", lat: lat, lon: lon ) else {
             throw ClimeError.makeRequest
         }
         return URLRequest(url: url)
@@ -32,13 +32,13 @@ final class URLRequestFactory: URLRequestFactoryProtocol {
 }
 
 private extension URLRequestFactory {
-    private func url(with path: String) -> URL? {
+    private func url(with path: String, lat: Double, lon: Double) -> URL? {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = host
         urlComponents.path = path
-        let queryLatitude = URLQueryItem(name: "lat", value: String(latitude))
-        let queryLongitude = URLQueryItem(name: "lon", value: String(longitude))
+        let queryLatitude = URLQueryItem(name: "lat", value: String(lat))
+        let queryLongitude = URLQueryItem(name: "lon", value: String(lon))
 
         urlComponents.queryItems = [queryLatitude, queryLongitude]
 

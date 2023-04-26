@@ -24,7 +24,7 @@
 		0CF4C61329F79E20005B9178 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61229F79E20005B9178 /* NetworkService.swift */; };
 		0CF4C61529F79EC7005B9178 /* ClimeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61429F79EC7005B9178 /* ClimeServices.swift */; };
 		0CF4C61729F79F83005B9178 /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */; };
-		0CF4C61929F7A993005B9178 /* ClimeLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61829F7A993005B9178 /* ClimeLocationService.swift */; };
+		0CF4C61929F7A993005B9178 /* ClimeLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61829F7A993005B9178 /* ClimeLocationManager.swift */; };
 		0CF4C61B29F7C6AA005B9178 /* AssemblyModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61A29F7C6AA005B9178 /* AssemblyModules.swift */; };
 		0CF4C61E29F7C960005B9178 /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C61D29F7C960005B9178 /* ServicesAssembly.swift */; };
 		0CF4C62229F7CB9B005B9178 /* MainViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4C62129F7CB9B005B9178 /* MainViewProtocol.swift */; };
@@ -56,7 +56,7 @@
 		0CF4C61229F79E20005B9178 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0CF4C61429F79EC7005B9178 /* ClimeServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeServices.swift; sourceTree = "<group>"; };
 		0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
-		0CF4C61829F7A993005B9178 /* ClimeLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeLocationService.swift; sourceTree = "<group>"; };
+		0CF4C61829F7A993005B9178 /* ClimeLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeLocationManager.swift; sourceTree = "<group>"; };
 		0CF4C61A29F7C6AA005B9178 /* AssemblyModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModules.swift; sourceTree = "<group>"; };
 		0CF4C61D29F7C960005B9178 /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
 		0CF4C62129F7CB9B005B9178 /* MainViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewProtocol.swift; sourceTree = "<group>"; };
@@ -89,6 +89,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		0C2A807329F8F25500860486 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0CF4C61829F7A993005B9178 /* ClimeLocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		0CF4C5D829F6B89F005B9178 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +123,7 @@
 				0CF4C61C29F7C70F005B9178 /* Assembly */,
 				0CF4C5FD29F6B9AD005B9178 /* Extensions */,
 				0CF4C5FC29F6B9A2005B9178 /* Services */,
+				0C2A807329F8F25500860486 /* Managers */,
 				0CF4C5FA29F6B97F005B9178 /* Modules */,
 				0CF4C5F929F6B96C005B9178 /* SupportingFiles */,
 				0CF4C5F829F6B95F005B9178 /* Application */,
@@ -166,7 +175,6 @@
 				0CF4C61229F79E20005B9178 /* NetworkService.swift */,
 				0CF4C61429F79EC7005B9178 /* ClimeServices.swift */,
 				0CF4C61629F79F83005B9178 /* URLRequestFactory.swift */,
-				0CF4C61829F7A993005B9178 /* ClimeLocationService.swift */,
 				0CF4C62729F7E029005B9178 /* ImageLoader.swift */,
 			);
 			path = Services;
@@ -374,7 +382,7 @@
 				0CF4C61129F79DD7005B9178 /* ClimeError.swift in Sources */,
 				0CF4C62A29F7E050005B9178 /* UIImageView + Extension.swift in Sources */,
 				0CF4C60129F6BEA3005B9178 /* UIViewController + Extension.swift in Sources */,
-				0CF4C61929F7A993005B9178 /* ClimeLocationService.swift in Sources */,
+				0CF4C61929F7A993005B9178 /* ClimeLocationManager.swift in Sources */,
 				0CF4C62629F7CBC5005B9178 /* MainPresenter.swift in Sources */,
 				0CF4C60F29F6D8C2005B9178 /* ClimeModel.swift in Sources */,
 				0CF4C62429F7CBB1005B9178 /* MainPresenterProtocol.swift in Sources */,

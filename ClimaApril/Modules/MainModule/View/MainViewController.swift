@@ -31,6 +31,7 @@ final class MainViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: compositionLayout.configureCompositionalLayout())
         collectionView.register(ClimeTodayCell.self, forCellWithReuseIdentifier: ClimeTodayCell.reuseIdentifier)
         collectionView.register(ClimeDayCell.self, forCellWithReuseIdentifier: ClimeDayCell.reuseIdentifier)
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.dataSource = self
         return collectionView
     }()
@@ -53,7 +54,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         settingRefreshControl()
-        presenter.loadClime()
+        presenter.setLocationClime()
     }
 }
 
@@ -79,7 +80,7 @@ private extension MainViewController {
 
     @objc
     func didRefresh() {
-        presenter.loadClime()
+        presenter.setLocationClime()
     }
 }
 
@@ -134,7 +135,7 @@ extension MainViewController: UICollectionViewDataSource {
             let icon = model.fact.icon
             let stringUrl = presenter.getUrlIcon(with: icon)
             cell.conditionImageView.loadImage(from: stringUrl)
-            cell.conditionLabel.text = model.fact.condition
+            cell.conditionLabel.text = model.fact.condition.rawValue
             return cell
         case .ClimeDay:
             guard
