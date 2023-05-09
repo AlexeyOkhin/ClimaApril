@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "668466A9-F55B-425C-91D9-247A5C39FFAB",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ClimaApril.xcodeproj",
+      "identifier" : "0C3756CE2A0A87560081201A",
+      "name" : "ClimaAprilTests"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ClimaApril.xcodeproj",
+        "identifier" : "0C3756CE2A0A87560081201A",
+        "name" : "ClimaAprilTests"
+      }
+    }
+  ],
+  "version" : 1
+}
