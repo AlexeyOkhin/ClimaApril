@@ -21,8 +21,6 @@ class MockView: MainViewProtocol {
     }
 }
 
-
-
 class MainPresenterTest: XCTestCase {
 
     let view = MockView()

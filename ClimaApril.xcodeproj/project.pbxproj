@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1ACF572A0AD576009456B5 /* ClimaUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1ACF562A0AD576009456B5 /* ClimaUITest.swift */; };
 		0C2A806C29F80E2A00860486 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A806B29F80E2A00860486 /* Date + Extension.swift */; };
 		0C2A806E29F817C100860486 /* ClimeCompositionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A806D29F817C100860486 /* ClimeCompositionLayout.swift */; };
 		0C2A807529F8FF1000860486 /* ClimeHourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A807429F8FF1000860486 /* ClimeHourCell.swift */; };
@@ -39,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0C1ACF512A0AD48F009456B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0CF4C5D929F6B89F005B9178 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0CF4C5E029F6B89F005B9178;
+			remoteInfo = ClimaApril;
+		};
 		0C3756D32A0A87560081201A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0CF4C5D929F6B89F005B9178 /* Project object */;
@@ -50,6 +58,9 @@
 
 /* Begin PBXFileReference section */
 		09B903D30FE1CADF59277F45 /* Pods_ClimaApril.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClimaApril.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C1ACF462A0AD395009456B5 /* UITestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UITestPlan.xctestplan; sourceTree = "<group>"; };
+		0C1ACF4B2A0AD48F009456B5 /* ClimaAprilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimaAprilUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C1ACF562A0AD576009456B5 /* ClimaUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaUITest.swift; sourceTree = "<group>"; };
 		0C2A806B29F80E2A00860486 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
 		0C2A806D29F817C100860486 /* ClimeCompositionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeCompositionLayout.swift; sourceTree = "<group>"; };
 		0C2A807429F8FF1000860486 /* ClimeHourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimeHourCell.swift; sourceTree = "<group>"; };
@@ -87,6 +98,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0C1ACF482A0AD48F009456B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0C3756CC2A0A87560081201A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C1ACF4C2A0AD48F009456B5 /* ClimaAprilUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0C1ACF562A0AD576009456B5 /* ClimaUITest.swift */,
+			);
+			path = ClimaAprilUITests;
+			sourceTree = "<group>";
+		};
 		0C2A806F29F817F200860486 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,9 +168,11 @@
 			isa = PBXGroup;
 			children = (
 				0C3756DE2A0A8C7D0081201A /* ClimaApril.xctestplan */,
+				0C1ACF462A0AD395009456B5 /* UITestPlan.xctestplan */,
 				0CF4C5FE29F6BC21005B9178 /* .gitignore */,
 				0CF4C5E329F6B89F005B9178 /* ClimaApril */,
 				0C3756D02A0A87560081201A /* ClimaAprilTests */,
+				0C1ACF4C2A0AD48F009456B5 /* ClimaAprilUITests */,
 				0CF4C5E229F6B89F005B9178 /* Products */,
 				B97E7276B7788F23167B4D59 /* Pods */,
 				597C7EE4F773FC05B38B6083 /* Frameworks */,
@@ -156,6 +184,7 @@
 			children = (
 				0CF4C5E129F6B89F005B9178 /* ClimaApril.app */,
 				0C3756CF2A0A87560081201A /* ClimaAprilTests.xctest */,
+				0C1ACF4B2A0AD48F009456B5 /* ClimaAprilUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -301,6 +330,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0C1ACF4A2A0AD48F009456B5 /* ClimaAprilUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C1ACF532A0AD48F009456B5 /* Build configuration list for PBXNativeTarget "ClimaAprilUITests" */;
+			buildPhases = (
+				0C1ACF472A0AD48F009456B5 /* Sources */,
+				0C1ACF482A0AD48F009456B5 /* Frameworks */,
+				0C1ACF492A0AD48F009456B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C1ACF522A0AD48F009456B5 /* PBXTargetDependency */,
+			);
+			name = ClimaAprilUITests;
+			productName = ClimaAprilUITests;
+			productReference = 0C1ACF4B2A0AD48F009456B5 /* ClimaAprilUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		0C3756CE2A0A87560081201A /* ClimaAprilTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C3756D72A0A87560081201A /* Build configuration list for PBXNativeTarget "ClimaAprilTests" */;
@@ -348,6 +395,11 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					0C1ACF4A2A0AD48F009456B5 = {
+						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
+						TestTargetID = 0CF4C5E029F6B89F005B9178;
+					};
 					0C3756CE2A0A87560081201A = {
 						CreatedOnToolsVersion = 14.2;
 						LastSwiftMigration = 1420;
@@ -373,11 +425,19 @@
 			targets = (
 				0CF4C5E029F6B89F005B9178 /* ClimaApril */,
 				0C3756CE2A0A87560081201A /* ClimaAprilTests */,
+				0C1ACF4A2A0AD48F009456B5 /* ClimaAprilUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0C1ACF492A0AD48F009456B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0C3756CD2A0A87560081201A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,6 +500,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0C1ACF472A0AD48F009456B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C1ACF572A0AD576009456B5 /* ClimaUITest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0C3756CB2A0A87560081201A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -482,6 +550,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0C1ACF522A0AD48F009456B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0CF4C5E029F6B89F005B9178 /* ClimaApril */;
+			targetProxy = 0C1ACF512A0AD48F009456B5 /* PBXContainerItemProxy */;
+		};
 		0C3756D42A0A87560081201A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0CF4C5E029F6B89F005B9178 /* ClimaApril */;
@@ -501,6 +574,53 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0C1ACF542A0AD48F009456B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W856DM7S8L;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Djinsolobzik.ClimaAprilUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ClimaApril;
+			};
+			name = Debug;
+		};
+		0C1ACF552A0AD48F009456B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W856DM7S8L;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Djinsolobzik.ClimaAprilUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ClimaApril;
+			};
+			name = Release;
+		};
 		0C3756D52A0A87560081201A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -729,6 +849,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0C1ACF532A0AD48F009456B5 /* Build configuration list for PBXNativeTarget "ClimaAprilUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C1ACF542A0AD48F009456B5 /* Debug */,
+				0C1ACF552A0AD48F009456B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0C3756D72A0A87560081201A /* Build configuration list for PBXNativeTarget "ClimaAprilTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
